@@ -3,7 +3,7 @@
 # Headers required:
 # - chipmunk 6.2.2 (statically linked)
 # - glew 1.11.0 (glew32.dll)
-# - glm 0.9.9.6-dev (statically linked)
+# - glm 0.9.7.0 (statically linked)
 # - minizip 1.2.x (statically linked)
 # - re2 2019-04-01 (statically linked)
 # - SDL2 2.0.8 (SDL2.dll)
@@ -15,7 +15,7 @@ LIBS="$(pwd)"
 
 CHIPMUNK_VERSION=6.2.2
 GLEW_VERSION=1.11.0
-GLM_VERSION=fce2abd01ce21063bd25ba67c9318be83bf48813
+GLM_VERSION=0.9.7.0
 MINIZIP_VERSION=1.2
 RE2_VERSION=2019-04-01
 SDL2_VERSION=2.0.8
@@ -28,7 +28,7 @@ for i in chipmunk glew glm minizip re2 sdl sdl_image sdl_ttf zlib; do
 	mkdir -v $i || exit 1	
 done
 
-cd ..
+cd /tmp
 rm -rvf download_temp || exit 1
 mkdir download_temp || exit 1
 cd download_temp
@@ -53,7 +53,7 @@ rm -v "$LIBS/glm/glm/CMakeLists.txt" || exit 1
 # Download minizip sources
 wget -O minizip-$MINIZIP_VERSION.tar.gz https://github.com/nmoinvaz/minizip/archive/$MINIZIP_VERSION.tar.gz || exit 1
 tar xvf minizip-$MINIZIP_VERSION.tar.gz || exit 1
-cp -v minizip-$MINIZIP_VERSION/{LICENSE,*.c,*.h} "$LIBS/minizip" || exit 1
+cp -vr minizip-$MINIZIP_VERSION/{LICENSE,aes,*.c,*.h} "$LIBS/minizip" || exit 1
 
 # Download re2 sources
 wget -O re2-$RE2_VERSION.tar.gz https://github.com/google/re2/archive/$RE2_VERSION.tar.gz
