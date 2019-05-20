@@ -1,0 +1,4 @@
+[submodule "libs/core"]
+	path = libs/core
+	url = https://github.com/Lymia/outlaws-core.git
+
