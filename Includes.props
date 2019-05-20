@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <ReassemblyCoreImports></ReassemblyCoreImports>
+	  <!-- Runtime includes -->
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/include;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <!-- Reassembly includes -->
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+	  <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/core;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/core/os/sdl;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/core/os/win32;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+	  <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/game;$(ReassemblyCoreImports)</ReassemblyCoreImports>  
+    <!-- Dependency includes -->
+	  <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/chipmunk/include/chipmunk;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+	  <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/glew;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/glm;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/minizip;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/re2;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/sdl;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/sdl_image;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/sdl_ttf;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/zlib;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+  </PropertyGroup>
+</Project>
