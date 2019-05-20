@@ -9,35 +9,17 @@ typedef unsigned int uint;
 // originally from Geometry.h
 #define GLM_FORCE_RADIANS 1
 #define GLM_FORCE_XYZW 1
-#include "../glm/vec2.hpp"
-#include "../glm/vec3.hpp"
-#include "../glm/vec4.hpp"
-#include "../glm/mat3x3.hpp"
-#include "../glm/mat4x4.hpp"
-#include "../glm/trigonometric.hpp"
-#include "../glm/exponential.hpp"
-#include "../glm/common.hpp"
-//#include "../glm/packing.hpp"
-#include "../glm/geometric.hpp"
-//#include "../glm/matrix.hpp"
-//#include "../glm/vec_relational.hpp"
-//#include "../glm/integer.hpp"
-#include "../glm/gtc/matrix_transform.hpp"
-#include "../glm/gtx/color_space.hpp"
-#include "../glm/gtc/random.hpp"
-//#include "../glm/gtc/quaternion.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/color_space.hpp>
+#include <glm/gtc/random.hpp>
+#include <glm/gtx/scalar_relational.hpp>
 
 typedef unsigned char uchar;
 typedef unsigned long long uint64; // not from Geometry.h
 
 typedef glm::vec2 float2;
 /////
-
-#ifndef TYPE_NAME_S
-// this is a backup to make compilation work in mods.  You shouldn't use this in mods!
-#define TYPE_NAME_S(x) (#x)
-#endif
-
 
 #include <string>
 using std::string;
