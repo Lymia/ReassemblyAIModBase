@@ -54,8 +54,10 @@ using std::priority_queue;
 
 #define CP_ALLOW_PRIVATE_ACCESS 1
 
+#pragma warning(disable: 4244) // suppress chipmunk related warning
 #include "../chipmunk/include/chipmunk/chipmunk.h"
 #include "../chipmunk/include/chipmunk/chipmunk_unsafe.h"
+#pragma warning(disable: 4244)
 
 #include "StdAfx_core.h"
 
