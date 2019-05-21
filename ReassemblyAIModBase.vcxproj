@@ -46,69 +46,17 @@
     <ClCompile Include="libs\chipmunk\src\cpVect.c" />
     <ClCompile Include="libs\core\base64.c" />
     <ClCompile Include="libs\core\base64.cpp" />
-    <ClCompile Include="libs\core\Event.cpp" />
     <ClCompile Include="libs\core\Geometry.cpp" />
-    <ClCompile Include="libs\core\GLText.cpp" />
-    <ClCompile Include="libs\core\Graphics.cpp" />
-    <ClCompile Include="libs\core\GUI.cpp" />
     <ClCompile Include="libs\core\md5.c" />
     <ClCompile Include="libs\core\Nav.cpp" />
-    <ClCompile Include="libs\core\Network.cpp" />
-    <ClCompile Include="libs\core\os\sdl\sdl.cpp" />
-    <ClCompile Include="libs\core\os\sdl\sdl_gamepad.cpp" />
-    <ClCompile Include="libs\core\os\win32\Win32Main.cpp" />
     <ClCompile Include="libs\core\Particles.cpp" />
     <ClCompile Include="libs\core\phpbbhash.cpp" />
-    <ClCompile Include="libs\core\Shaders.cpp" />
-    <ClCompile Include="libs\core\Steam.cpp" />
     <ClCompile Include="libs\core\stl_ext.cpp" />
     <ClCompile Include="libs\core\Str.cpp" />
-    <ClCompile Include="libs\core\ZipFile.cpp" />
     <ClCompile Include="libs\glm\glm\detail\glm.cpp" />
-    <ClCompile Include="libs\minizip\aes\aescrypt.c" />
-    <ClCompile Include="libs\minizip\aes\aeskey.c" />
-    <ClCompile Include="libs\minizip\aes\aestab.c" />
-    <ClCompile Include="libs\minizip\aes\aes_ni.c" />
-    <ClCompile Include="libs\minizip\aes\fileenc.c" />
-    <ClCompile Include="libs\minizip\aes\hmac.c" />
-    <ClCompile Include="libs\minizip\aes\prng.c" />
-    <ClCompile Include="libs\minizip\aes\pwd2key.c" />
-    <ClCompile Include="libs\minizip\aes\sha1.c" />
-    <ClCompile Include="libs\minizip\crypt.c" />
-    <ClCompile Include="libs\minizip\ioapi.c" />
-    <ClCompile Include="libs\minizip\ioapi_buf.c" />
-    <ClCompile Include="libs\minizip\ioapi_mem.c" />
-    <ClCompile Include="libs\minizip\iowin32.c" />
-    <ClCompile Include="libs\minizip\minishared.c" />
-    <ClCompile Include="libs\minizip\miniunz.c" />
-    <ClCompile Include="libs\minizip\minizip.c" />
-    <ClCompile Include="libs\minizip\unzip.c" />
-    <ClCompile Include="libs\minizip\zip.c" />
-    <ClCompile Include="libs\re2\re2\bitstate.cc" />
-    <ClCompile Include="libs\re2\re2\compile.cc" />
-    <ClCompile Include="libs\re2\re2\dfa.cc" />
-    <ClCompile Include="libs\re2\re2\filtered_re2.cc" />
-    <ClCompile Include="libs\re2\re2\mimics_pcre.cc" />
-    <ClCompile Include="libs\re2\re2\nfa.cc" />
-    <ClCompile Include="libs\re2\re2\onepass.cc" />
-    <ClCompile Include="libs\re2\re2\parse.cc" />
-    <ClCompile Include="libs\re2\re2\perl_groups.cc" />
-    <ClCompile Include="libs\re2\re2\prefilter.cc" />
-    <ClCompile Include="libs\re2\re2\prefilter_tree.cc" />
-    <ClCompile Include="libs\re2\re2\prog.cc" />
-    <ClCompile Include="libs\re2\re2\re2.cc" />
-    <ClCompile Include="libs\re2\re2\regexp.cc" />
-    <ClCompile Include="libs\re2\re2\set.cc" />
-    <ClCompile Include="libs\re2\re2\simplify.cc" />
-    <ClCompile Include="libs\re2\re2\stringpiece.cc" />
-    <ClCompile Include="libs\re2\re2\tostring.cc" />
-    <ClCompile Include="libs\re2\re2\unicode_casefold.cc" />
-    <ClCompile Include="libs\re2\re2\unicode_groups.cc" />
-    <ClCompile Include="libs\re2\util\pcre.cc" />
-    <ClCompile Include="libs\re2\util\rune.cc" />
-    <ClCompile Include="libs\re2\util\strutil.cc" />
     <ClCompile Include="src\internal\Analysis.cpp" />
     <ClCompile Include="src\internal\Utils.cpp" />
+    <ClCompile Include="src\MinCore.cpp" />
     <ClCompile Include="src\Polyfill.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -389,118 +337,6 @@
     <ClInclude Include="libs\minizip\minishared.h" />
     <ClInclude Include="libs\minizip\unzip.h" />
     <ClInclude Include="libs\minizip\zip.h" />
-    <ClInclude Include="libs\re2\re2\bitmap256.h" />
-    <ClInclude Include="libs\re2\re2\filtered_re2.h" />
-    <ClInclude Include="libs\re2\re2\prefilter.h" />
-    <ClInclude Include="libs\re2\re2\prefilter_tree.h" />
-    <ClInclude Include="libs\re2\re2\prog.h" />
-    <ClInclude Include="libs\re2\re2\re2.h" />
-    <ClInclude Include="libs\re2\re2\regexp.h" />
-    <ClInclude Include="libs\re2\re2\set.h" />
-    <ClInclude Include="libs\re2\re2\stringpiece.h" />
-    <ClInclude Include="libs\re2\re2\unicode_casefold.h" />
-    <ClInclude Include="libs\re2\re2\unicode_groups.h" />
-    <ClInclude Include="libs\re2\re2\walker-inl.h" />
-    <ClInclude Include="libs\re2\util\benchmark.h" />
-    <ClInclude Include="libs\re2\util\flags.h" />
-    <ClInclude Include="libs\re2\util\logging.h" />
-    <ClInclude Include="libs\re2\util\mix.h" />
-    <ClInclude Include="libs\re2\util\mutex.h" />
-    <ClInclude Include="libs\re2\util\pcre.h" />
-    <ClInclude Include="libs\re2\util\pod_array.h" />
-    <ClInclude Include="libs\re2\util\sparse_array.h" />
-    <ClInclude Include="libs\re2\util\sparse_set.h" />
-    <ClInclude Include="libs\re2\util\strutil.h" />
-    <ClInclude Include="libs\re2\util\test.h" />
-    <ClInclude Include="libs\re2\util\utf.h" />
-    <ClInclude Include="libs\re2\util\util.h" />
-    <ClInclude Include="libs\sdl\begin_code.h" />
-    <ClInclude Include="libs\sdl\close_code.h" />
-    <ClInclude Include="libs\sdl\SDL.h" />
-    <ClInclude Include="libs\sdl\SDL_assert.h" />
-    <ClInclude Include="libs\sdl\SDL_atomic.h" />
-    <ClInclude Include="libs\sdl\SDL_audio.h" />
-    <ClInclude Include="libs\sdl\SDL_bits.h" />
-    <ClInclude Include="libs\sdl\SDL_blendmode.h" />
-    <ClInclude Include="libs\sdl\SDL_clipboard.h" />
-    <ClInclude Include="libs\sdl\SDL_config.h" />
-    <ClInclude Include="libs\sdl\SDL_config_android.h" />
-    <ClInclude Include="libs\sdl\SDL_config_iphoneos.h" />
-    <ClInclude Include="libs\sdl\SDL_config_macosx.h" />
-    <ClInclude Include="libs\sdl\SDL_config_minimal.h" />
-    <ClInclude Include="libs\sdl\SDL_config_pandora.h" />
-    <ClInclude Include="libs\sdl\SDL_config_psp.h" />
-    <ClInclude Include="libs\sdl\SDL_config_windows.h" />
-    <ClInclude Include="libs\sdl\SDL_config_winrt.h" />
-    <ClInclude Include="libs\sdl\SDL_config_wiz.h" />
-    <ClInclude Include="libs\sdl\SDL_copying.h" />
-    <ClInclude Include="libs\sdl\SDL_cpuinfo.h" />
-    <ClInclude Include="libs\sdl\SDL_egl.h" />
-    <ClInclude Include="libs\sdl\SDL_endian.h" />
-    <ClInclude Include="libs\sdl\SDL_error.h" />
-    <ClInclude Include="libs\sdl\SDL_events.h" />
-    <ClInclude Include="libs\sdl\SDL_filesystem.h" />
-    <ClInclude Include="libs\sdl\SDL_gamecontroller.h" />
-    <ClInclude Include="libs\sdl\SDL_gesture.h" />
-    <ClInclude Include="libs\sdl\SDL_haptic.h" />
-    <ClInclude Include="libs\sdl\SDL_hints.h" />
-    <ClInclude Include="libs\sdl\SDL_joystick.h" />
-    <ClInclude Include="libs\sdl\SDL_keyboard.h" />
-    <ClInclude Include="libs\sdl\SDL_keycode.h" />
-    <ClInclude Include="libs\sdl\SDL_loadso.h" />
-    <ClInclude Include="libs\sdl\SDL_log.h" />
-    <ClInclude Include="libs\sdl\SDL_main.h" />
-    <ClInclude Include="libs\sdl\SDL_messagebox.h" />
-    <ClInclude Include="libs\sdl\SDL_mouse.h" />
-    <ClInclude Include="libs\sdl\SDL_mutex.h" />
-    <ClInclude Include="libs\sdl\SDL_name.h" />
-    <ClInclude Include="libs\sdl\SDL_opengl.h" />
-    <ClInclude Include="libs\sdl\SDL_opengles.h" />
-    <ClInclude Include="libs\sdl\SDL_opengles2.h" />
-    <ClInclude Include="libs\sdl\SDL_opengles2_gl2.h" />
-    <ClInclude Include="libs\sdl\SDL_opengles2_gl2ext.h" />
-    <ClInclude Include="libs\sdl\SDL_opengles2_gl2platform.h" />
-    <ClInclude Include="libs\sdl\SDL_opengles2_khrplatform.h" />
-    <ClInclude Include="libs\sdl\SDL_opengl_glext.h" />
-    <ClInclude Include="libs\sdl\SDL_pixels.h" />
-    <ClInclude Include="libs\sdl\SDL_platform.h" />
-    <ClInclude Include="libs\sdl\SDL_power.h" />
-    <ClInclude Include="libs\sdl\SDL_quit.h" />
-    <ClInclude Include="libs\sdl\SDL_rect.h" />
-    <ClInclude Include="libs\sdl\SDL_render.h" />
-    <ClInclude Include="libs\sdl\SDL_revision.h" />
-    <ClInclude Include="libs\sdl\SDL_rwops.h" />
-    <ClInclude Include="libs\sdl\SDL_scancode.h" />
-    <ClInclude Include="libs\sdl\SDL_shape.h" />
-    <ClInclude Include="libs\sdl\SDL_stdinc.h" />
-    <ClInclude Include="libs\sdl\SDL_surface.h" />
-    <ClInclude Include="libs\sdl\SDL_system.h" />
-    <ClInclude Include="libs\sdl\SDL_syswm.h" />
-    <ClInclude Include="libs\sdl\SDL_test.h" />
-    <ClInclude Include="libs\sdl\SDL_test_assert.h" />
-    <ClInclude Include="libs\sdl\SDL_test_common.h" />
-    <ClInclude Include="libs\sdl\SDL_test_compare.h" />
-    <ClInclude Include="libs\sdl\SDL_test_crc32.h" />
-    <ClInclude Include="libs\sdl\SDL_test_font.h" />
-    <ClInclude Include="libs\sdl\SDL_test_fuzzer.h" />
-    <ClInclude Include="libs\sdl\SDL_test_harness.h" />
-    <ClInclude Include="libs\sdl\SDL_test_images.h" />
-    <ClInclude Include="libs\sdl\SDL_test_log.h" />
-    <ClInclude Include="libs\sdl\SDL_test_md5.h" />
-    <ClInclude Include="libs\sdl\SDL_test_memory.h" />
-    <ClInclude Include="libs\sdl\SDL_test_random.h" />
-    <ClInclude Include="libs\sdl\SDL_thread.h" />
-    <ClInclude Include="libs\sdl\SDL_timer.h" />
-    <ClInclude Include="libs\sdl\SDL_touch.h" />
-    <ClInclude Include="libs\sdl\SDL_types.h" />
-    <ClInclude Include="libs\sdl\SDL_version.h" />
-    <ClInclude Include="libs\sdl\SDL_video.h" />
-    <ClInclude Include="libs\sdl\SDL_vulkan.h" />
-    <ClInclude Include="libs\sdl_image\miniz.h" />
-    <ClInclude Include="libs\sdl_image\nanosvg.h" />
-    <ClInclude Include="libs\sdl_image\nanosvgrast.h" />
-    <ClInclude Include="libs\sdl_image\SDL_image.h" />
-    <ClInclude Include="libs\sdl_ttf\SDL_ttf.h" />
     <ClInclude Include="libs\zlib\crc32.h" />
     <ClInclude Include="libs\zlib\deflate.h" />
     <ClInclude Include="libs\zlib\gzguts.h" />
@@ -515,14 +351,11 @@
     <ClInclude Include="src\internal\Analysis.h" />
     <ClInclude Include="src\internal\Macros.h" />
     <ClInclude Include="src\internal\Utils.h" />
+    <ClInclude Include="src\platformincludes.h" />
     <ClInclude Include="src\StdAfx_aiMod.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="linkage\glew32.lib" />
     <Library Include="linkage\ReassemblyRelease.lib" />
-    <Library Include="linkage\SDL2.lib" />
-    <Library Include="linkage\SDL2_image.lib" />
-    <Library Include="linkage\SDL2_ttf.lib" />
     <Library Include="linkage\zlib1.lib" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -570,7 +403,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;PSAPI_VERSION=1;NOMINMAX;_WINDOWS;AI_MOD;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;PSAPI_VERSION=1;NOMINMAX;_WINDOWS;AI_MOD;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ReassemblyCoreImports)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
@@ -594,7 +427,7 @@
       </ForceSymbolReferences>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
-      <AdditionalDependencies>Psapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>Psapi.lib;Opengl32.lib;linkage/*.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -605,7 +438,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;PSAPI_VERSION=1;NOMINMAX;_WINDOWS;AI_MOD;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;PSAPI_VERSION=1;NOMINMAX;_WINDOWS;AI_MOD;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ReassemblyCoreImports)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
@@ -631,7 +464,7 @@
       </ForceSymbolReferences>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
-      <AdditionalDependencies>Psapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>Psapi.lib;Opengl32.lib;linkage/*.lib</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

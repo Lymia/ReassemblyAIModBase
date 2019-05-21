@@ -66,24 +66,6 @@
     <Filter Include="Dependencies\minizip\aes">
       <UniqueIdentifier>{53baab20-2a95-40ff-899f-e4f2d4983ee4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Dependencies\re2">
-      <UniqueIdentifier>{2dccaadf-3482-466e-8e16-a3b5fd3fe349}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Dependencies\re2\re2">
-      <UniqueIdentifier>{6b032b5c-948c-4ec0-b3ef-a092c5a5ac8d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Dependencies\re2\util">
-      <UniqueIdentifier>{e9ec7b3f-db5a-4998-b095-f15044f3cf4b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Dependencies\sdl">
-      <UniqueIdentifier>{3b97eb38-2f70-4421-9855-468d8215982c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Dependencies\sdl_image">
-      <UniqueIdentifier>{9336183a-7b49-41f4-ac47-3a8467ae2a00}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Dependencies\sdl_ttf">
-      <UniqueIdentifier>{36905256-81f0-41c6-ad9f-9ef9edfb58d9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Dependencies\zlib">
       <UniqueIdentifier>{7529824f-8772-439d-98a3-ebc183fcc29c}</UniqueIdentifier>
     </Filter>
@@ -182,19 +164,7 @@
     <ClCompile Include="libs\core\base64.cpp">
       <Filter>Dependencies\core</Filter>
     </ClCompile>
-    <ClCompile Include="libs\core\Event.cpp">
-      <Filter>Dependencies\core</Filter>
-    </ClCompile>
     <ClCompile Include="libs\core\Geometry.cpp">
-      <Filter>Dependencies\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\GLText.cpp">
-      <Filter>Dependencies\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Graphics.cpp">
-      <Filter>Dependencies\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\GUI.cpp">
       <Filter>Dependencies\core</Filter>
     </ClCompile>
     <ClCompile Include="libs\core\md5.c">
@@ -203,19 +173,10 @@
     <ClCompile Include="libs\core\Nav.cpp">
       <Filter>Dependencies\core</Filter>
     </ClCompile>
-    <ClCompile Include="libs\core\Network.cpp">
-      <Filter>Dependencies\core</Filter>
-    </ClCompile>
     <ClCompile Include="libs\core\Particles.cpp">
       <Filter>Dependencies\core</Filter>
     </ClCompile>
     <ClCompile Include="libs\core\phpbbhash.cpp">
-      <Filter>Dependencies\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Shaders.cpp">
-      <Filter>Dependencies\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Steam.cpp">
       <Filter>Dependencies\core</Filter>
     </ClCompile>
     <ClCompile Include="libs\core\stl_ext.cpp">
@@ -224,146 +185,8 @@
     <ClCompile Include="libs\core\Str.cpp">
       <Filter>Dependencies\core</Filter>
     </ClCompile>
-    <ClCompile Include="libs\core\ZipFile.cpp">
-      <Filter>Dependencies\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\os\win32\Win32Main.cpp">
-      <Filter>Dependencies\core\os\win32</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\os\sdl\sdl_gamepad.cpp">
-      <Filter>Dependencies\core\os\sdl</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\os\sdl\sdl.cpp">
-      <Filter>Dependencies\core\os\sdl</Filter>
-    </ClCompile>
     <ClCompile Include="libs\glm\glm\detail\glm.cpp">
       <Filter>Dependencies\glm\glm\detail</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\crypt.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\ioapi.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\ioapi_buf.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\ioapi_mem.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\iowin32.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\minishared.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\miniunz.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\minizip.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\unzip.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\zip.c">
-      <Filter>Dependencies\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\aes_ni.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\aescrypt.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\aeskey.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\aestab.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\fileenc.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\hmac.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\prng.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\pwd2key.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\minizip\aes\sha1.c">
-      <Filter>Dependencies\minizip\aes</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\bitstate.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\compile.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\dfa.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\filtered_re2.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\mimics_pcre.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\nfa.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\onepass.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\parse.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\perl_groups.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\prefilter.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\prefilter_tree.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\prog.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\re2.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\regexp.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\set.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\simplify.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\stringpiece.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\tostring.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\unicode_casefold.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\unicode_groups.cc">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\util\strutil.cc">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\util\pcre.cc">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\util\rune.cc">
-      <Filter>Dependencies\re2\util</Filter>
     </ClCompile>
     <ClCompile Include="src\internal\Analysis.cpp">
       <Filter>Source Files\internal</Filter>
@@ -372,6 +195,9 @@
       <Filter>Source Files\internal</Filter>
     </ClCompile>
     <ClCompile Include="src\Polyfill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MinCore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -726,342 +552,6 @@
     </ClInclude>
     <ClInclude Include="libs\minizip\zip.h">
       <Filter>Dependencies\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\bitmap256.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\filtered_re2.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\prefilter.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\prefilter_tree.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\prog.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\re2.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\regexp.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\set.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\stringpiece.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\unicode_casefold.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\unicode_groups.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\re2\walker-inl.h">
-      <Filter>Dependencies\re2\re2</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\benchmark.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\flags.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\logging.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\mix.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\mutex.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\pcre.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\pod_array.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\sparse_array.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\sparse_set.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\strutil.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\test.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\utf.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\re2\util\util.h">
-      <Filter>Dependencies\re2\util</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\begin_code.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\close_code.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_assert.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_atomic.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_audio.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_bits.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_blendmode.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_clipboard.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_android.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_iphoneos.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_macosx.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_minimal.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_pandora.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_psp.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_windows.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_winrt.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_config_wiz.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_copying.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_cpuinfo.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_egl.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_endian.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_error.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_events.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_filesystem.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_gamecontroller.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_gesture.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_haptic.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_hints.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_joystick.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_keyboard.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_keycode.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_loadso.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_log.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_main.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_messagebox.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_mouse.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_mutex.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_name.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_opengl.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_opengl_glext.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_opengles.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_opengles2.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_opengles2_gl2.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_opengles2_gl2ext.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_opengles2_gl2platform.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_opengles2_khrplatform.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_pixels.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_platform.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_power.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_quit.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_rect.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_render.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_revision.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_rwops.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_scancode.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_shape.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_stdinc.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_surface.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_system.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_syswm.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_assert.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_common.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_compare.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_crc32.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_font.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_fuzzer.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_harness.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_images.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_log.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_md5.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_memory.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_test_random.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_thread.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_timer.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_touch.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_types.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_version.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_video.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl\SDL_vulkan.h">
-      <Filter>Dependencies\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl_image\miniz.h">
-      <Filter>Dependencies\sdl_image</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl_image\nanosvg.h">
-      <Filter>Dependencies\sdl_image</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl_image\nanosvgrast.h">
-      <Filter>Dependencies\sdl_image</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl_image\SDL_image.h">
-      <Filter>Dependencies\sdl_image</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\sdl_ttf\SDL_ttf.h">
-      <Filter>Dependencies\sdl_ttf</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\crc32.h">
       <Filter>Dependencies\zlib</Filter>
@@ -1588,21 +1078,12 @@
     <ClInclude Include="src\StdAfx_aiMod.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\platformincludes.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="linkage\glew32.lib">
-      <Filter>Linkage Definitions</Filter>
-    </Library>
     <Library Include="linkage\ReassemblyRelease.lib">
-      <Filter>Linkage Definitions</Filter>
-    </Library>
-    <Library Include="linkage\SDL2.lib">
-      <Filter>Linkage Definitions</Filter>
-    </Library>
-    <Library Include="linkage\SDL2_image.lib">
-      <Filter>Linkage Definitions</Filter>
-    </Library>
-    <Library Include="linkage\SDL2_ttf.lib">
       <Filter>Linkage Definitions</Filter>
     </Library>
     <Library Include="linkage\zlib1.lib">
