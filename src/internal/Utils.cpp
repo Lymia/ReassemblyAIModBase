@@ -10,7 +10,8 @@ namespace aiModInternal {
 	static string calculateModuleName() {
 		char DllPath[MAX_PATH] = { 0 };
 		GetModuleFileNameA((HINSTANCE)&__ImageBase, DllPath, _countof(DllPath));
-		return string(DllPath);
+		auto filename = strrchr(DllPath, '\\');
+		return string(filename == NULL ? DllPath : filename + 1);
 	}
 	const char* getModuleName() {
 		static const string name = calculateModuleName();
@@ -27,8 +28,7 @@ namespace aiModInternal {
 	ENUM_TO_STR_FN(eDebugName, EDebug, DBG_TYPES);
 
 	void aiReportImpl(EDebug debug, string reportStr, bool isInternal) {
-		ASSERT_FATAL(debug || isInternal);
-		ASSERT_FATAL(!debug || !isInternal);
+		ASSERT_FATAL((debug || isInternal) && !(debug && isInternal));
 
 		auto name = debug == 0 ? "ANALYSIS" : eDebugName(debug);
 		auto moduleName = getModuleName();

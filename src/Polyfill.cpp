@@ -38,7 +38,7 @@ void Notifier::registerHandler(uint64 types, INotifyHandler* handler) {
 		}
 	}
 	if (types) DPRINT(NOTIFICATION, ("Attempt to register unknown notification types!"));
-	DPRINT(NOTIFICATION, ("Added %d and removed %d notification handlers for %s.", added, removed, TYPE_NAME_S(handler)));
+	DPRINT(NOTIFICATION, ("Added %d and removed %d notification handlers for handler at 0x%p.", added, removed, handler));
 }
 Notification::Notification(ENotification t, const char* msg, ...) __printflike(3, 4) : Notification(t) {
 	va_list vl;
