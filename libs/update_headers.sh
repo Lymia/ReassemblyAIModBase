@@ -5,7 +5,6 @@
 # - glew 1.11.0 (glew32.dll)
 # - glm 0.9.7.0 (statically linked)
 # - minizip 1.2.x (statically linked)
-# - re2 2019-04-01 (statically linked)
 # - zlib 1.2.11 (zlib1.dll)
 
 LIBS="$(pwd)"
@@ -14,10 +13,9 @@ CHIPMUNK_VERSION=a596bdb71db33c61c52c1ef94074737cb104c99f
 GLEW_VERSION=1.11.0
 GLM_VERSION=0.9.7.0
 MINIZIP_VERSION=1.2
-RE2_VERSION=2019-04-01
 ZLIB_VERSION=1.2.11
 
-for i in chipmunk glew glm minizip re2 zlib; do
+for i in chipmunk glew glm minizip zlib; do
 	rm -rvf $i || exit 1
 	mkdir -v $i || exit 1	
 done
@@ -50,14 +48,6 @@ tar xvf minizip-$MINIZIP_VERSION.tar.gz || exit 1
 cp -vr minizip-$MINIZIP_VERSION/{LICENSE,*.h} "$LIBS/minizip" || exit 1
 mkdir -v "$LIBS/minizip/aes" || exit 1
 cp -v minizip-$MINIZIP_VERSION/aes/*.h "$LIBS/minizip/aes" || exit 1
-
-# Download re2 headers
-wget -O re2-$RE2_VERSION.tar.gz https://github.com/google/re2/archive/$RE2_VERSION.tar.gz
-tar xvf re2-$RE2_VERSION.tar.gz || exit 1
-cp -vr re2-$RE2_VERSION/LICENSE "$LIBS/re2" || exit 1
-mkdir -v "$LIBS/re2"/{re2,util} || exit 1
-cp -v re2-$RE2_VERSION/re2/*.h "$LIBS/re2/re2" || exit 1
-cp -v re2-$RE2_VERSION/util/*.h "$LIBS/re2/util" || exit 1
 
 # Download zlib headers
 wget https://zlib.net/zlib-$ZLIB_VERSION.tar.xz || exit 1

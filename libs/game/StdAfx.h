@@ -75,9 +75,6 @@ struct AchievementStat {
 #ifdef POSIX
 #undef POSIX
 #endif
-#include "re2/re2.h"
-
-using re2::RE2;
 
 inline cpVect cv(const float2 &v) { return cpv(v.x, v.y); }
 inline cpVect cv(const double2 &v) { return cpv(v.x, v.y); }
