@@ -54,10 +54,8 @@ using std::priority_queue;
 
 #define CP_ALLOW_PRIVATE_ACCESS 1
 
-#pragma warning(disable: 4244) // suppress chipmunk related warning
 #include "../chipmunk/include/chipmunk/chipmunk.h"
 #include "../chipmunk/include/chipmunk/chipmunk_unsafe.h"
-#pragma warning(disable: 4244)
 
 #include "StdAfx_core.h"
 
@@ -161,9 +159,10 @@ DCCV(int2);
 
 #define TO_DBG_ENUM(X, V) DBG_##X=V,
 enum DebugRender : uint64 { DBG_TYPES(TO_DBG_ENUM) };
-#define DPRINT(TYPE, ARGS)                                              \
-    if (globals.debugRender&(DBG_ ## TYPE))                             \
-        ::Report("[" #TYPE "] " + str_strip(str_format ARGS))
+
+//#define DPRINT(TYPE, ARGS)                                              \
+//    if (globals.debugRender&(DBG_ ## TYPE))                             \
+//        ::Report("[" #TYPE "] " + str_strip(str_format ARGS))
 
 DEFINE_ENUM(uint64, EDebug, DBG_TYPES);
 
@@ -336,8 +335,12 @@ struct Globals {
     Player                     *player;
 };
 
-extern Globals globals;
+//extern Globals globals;
 
 #include "Notification.h"
+
+#ifdef AI_MOD
+#include "StdAfx_aiMod.h"
+#endif
 
 #endif

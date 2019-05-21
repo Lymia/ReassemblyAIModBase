@@ -30,6 +30,7 @@
     <ClCompile Include="libs\chipmunk\src\cpArbiter.c" />
     <ClCompile Include="libs\chipmunk\src\cpArray.c" />
     <ClCompile Include="libs\chipmunk\src\cpBB.c" />
+    <ClCompile Include="libs\chipmunk\src\cpBBTree.c" />
     <ClCompile Include="libs\chipmunk\src\cpBody.c" />
     <ClCompile Include="libs\chipmunk\src\cpCollision.c" />
     <ClCompile Include="libs\chipmunk\src\cpHashSet.c" />
@@ -40,6 +41,8 @@
     <ClCompile Include="libs\chipmunk\src\cpSpaceHash.c" />
     <ClCompile Include="libs\chipmunk\src\cpSpaceQuery.c" />
     <ClCompile Include="libs\chipmunk\src\cpSpaceStep.c" />
+    <ClCompile Include="libs\chipmunk\src\cpSpatialIndex.c" />
+    <ClCompile Include="libs\chipmunk\src\cpSweep1D.c" />
     <ClCompile Include="libs\chipmunk\src\cpVect.c" />
     <ClCompile Include="libs\core\base64.c" />
     <ClCompile Include="libs\core\base64.cpp" />
@@ -104,6 +107,9 @@
     <ClCompile Include="libs\re2\util\pcre.cc" />
     <ClCompile Include="libs\re2\util\rune.cc" />
     <ClCompile Include="libs\re2\util\strutil.cc" />
+    <ClCompile Include="src\internal\Analysis.cpp" />
+    <ClCompile Include="src\internal\Utils.cpp" />
+    <ClCompile Include="src\Polyfill.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\chipmunk\include\chipmunk\chipmunk.h" />
@@ -133,6 +139,7 @@
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpShape.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpace.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpaceHash.h" />
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpatialIndex.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpVect.h" />
     <ClInclude Include="libs\core\AudioEvent.h" />
     <ClInclude Include="libs\core\base64.h" />
@@ -505,6 +512,10 @@
     <ClInclude Include="libs\zlib\zconf.h" />
     <ClInclude Include="libs\zlib\zlib.h" />
     <ClInclude Include="libs\zlib\zutil.h" />
+    <ClInclude Include="src\internal\Analysis.h" />
+    <ClInclude Include="src\internal\Macros.h" />
+    <ClInclude Include="src\internal\Utils.h" />
+    <ClInclude Include="src\StdAfx_aiMod.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="linkage\glew32.lib" />
@@ -576,6 +587,14 @@
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
+    <Lib>
+      <ExportNamedFunctions>
+      </ExportNamedFunctions>
+      <ForceSymbolReferences>
+      </ForceSymbolReferences>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -604,6 +623,14 @@
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
+    <Lib>
+      <ExportNamedFunctions>
+      </ExportNamedFunctions>
+      <ForceSymbolReferences>
+      </ForceSymbolReferences>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+    </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

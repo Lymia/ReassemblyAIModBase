@@ -5,1598 +5,1588 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\libs">
-      <UniqueIdentifier>{d639d237-0dbc-4d53-9e35-0ed14d501a2d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\core">
-      <UniqueIdentifier>{495e48be-c60b-4b48-8987-98216f7ad9a8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs">
-      <UniqueIdentifier>{6c93bdcb-2786-4d88-b5b2-672fcfbdacbc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\core">
-      <UniqueIdentifier>{56cb56c7-5d07-41eb-8c7f-b1dac61449c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\core\os">
-      <UniqueIdentifier>{f663e688-f70c-45cc-9894-a4db7c474ce0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\core\os\win32">
-      <UniqueIdentifier>{ae31c659-53cd-4b46-b8e3-425f6dbe3bcb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\chipmunk">
-      <UniqueIdentifier>{0cde100e-bf75-4dfd-9655-46d5afd8c9fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\chipmunk">
-      <UniqueIdentifier>{2e835953-c30f-47d7-a062-6505ce03633d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\chipmunk\constraints">
-      <UniqueIdentifier>{f4bbcd27-c007-45ff-bdbf-6daa272d59f4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\chipmunk\constraints">
-      <UniqueIdentifier>{210990a9-364c-4977-934c-aeace1b20e5f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\core\os\sdl">
-      <UniqueIdentifier>{2d73b7f7-91fb-48c8-81cc-5af9ed1ea21d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\core\os">
-      <UniqueIdentifier>{d0ab90b2-310c-4868-9e31-893191e54be7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\core\os\win32">
-      <UniqueIdentifier>{6c125255-a212-456b-94dd-19063845d221}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\core\os\sdl">
-      <UniqueIdentifier>{1eb0b571-f5c5-4dd3-bff4-0bc383e0f4e5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\game">
-      <UniqueIdentifier>{2dc1e7c4-2109-4683-8e11-f67429dc7a5e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\glew">
-      <UniqueIdentifier>{1df1018a-048b-42a6-ad3e-be19e9741315}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\glew\GL">
-      <UniqueIdentifier>{b0c29a74-a7f1-4b65-8f7a-09dc017e62bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Linkage Definitions">
       <UniqueIdentifier>{ea2bb0df-d4db-4c71-8461-e053764b8184}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\libs\glm">
+    <Filter Include="Source Files\internal">
+      <UniqueIdentifier>{ca588d71-990e-4673-affc-1d00ca4a63bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Dependencies\chipmunk">
+      <UniqueIdentifier>{2e835953-c30f-47d7-a062-6505ce03633d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\chipmunk\constraints">
+      <UniqueIdentifier>{f4bbcd27-c007-45ff-bdbf-6daa272d59f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\core">
+      <UniqueIdentifier>{56cb56c7-5d07-41eb-8c7f-b1dac61449c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\core\os">
+      <UniqueIdentifier>{f663e688-f70c-45cc-9894-a4db7c474ce0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\core\os\win32">
+      <UniqueIdentifier>{ae31c659-53cd-4b46-b8e3-425f6dbe3bcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\core\os\sdl">
+      <UniqueIdentifier>{2d73b7f7-91fb-48c8-81cc-5af9ed1ea21d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\game">
+      <UniqueIdentifier>{2dc1e7c4-2109-4683-8e11-f67429dc7a5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\glew">
+      <UniqueIdentifier>{1df1018a-048b-42a6-ad3e-be19e9741315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\glew\GL">
+      <UniqueIdentifier>{b0c29a74-a7f1-4b65-8f7a-09dc017e62bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\glm">
       <UniqueIdentifier>{7dfc94d0-6628-4e22-9ed8-2779a3f207fe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\libs\glm\glm">
+    <Filter Include="Dependencies\glm\glm">
       <UniqueIdentifier>{c0058099-0b78-408c-9f07-b72ae58036dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\libs\glm">
-      <UniqueIdentifier>{267d0da9-a955-442b-84df-58d7a1805b59}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\minizip">
-      <UniqueIdentifier>{e02ec89c-178d-4ea2-ab4d-d165c1271d9d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\minizip">
-      <UniqueIdentifier>{5906d8c5-0bf0-48ed-b74d-38accfc7e282}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\re2">
-      <UniqueIdentifier>{2dccaadf-3482-466e-8e16-a3b5fd3fe349}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\re2\re2">
-      <UniqueIdentifier>{6b032b5c-948c-4ec0-b3ef-a092c5a5ac8d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\re2">
-      <UniqueIdentifier>{28037861-31a2-41cb-88d0-df15577f2c07}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\re2\util">
-      <UniqueIdentifier>{e9ec7b3f-db5a-4998-b095-f15044f3cf4b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\re2\re2">
-      <UniqueIdentifier>{234aacac-ae71-4641-8091-b92dccb6f506}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\libs\re2\util">
-      <UniqueIdentifier>{4ae1a068-a4cc-4a00-8651-fa7377fff272}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\sdl_image">
-      <UniqueIdentifier>{9336183a-7b49-41f4-ac47-3a8467ae2a00}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\sdl_ttf">
-      <UniqueIdentifier>{36905256-81f0-41c6-ad9f-9ef9edfb58d9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\zlib">
-      <UniqueIdentifier>{7529824f-8772-439d-98a3-ebc183fcc29c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\sdl">
-      <UniqueIdentifier>{3b97eb38-2f70-4421-9855-468d8215982c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\libs\glm\glm\detail">
+    <Filter Include="Dependencies\glm\glm\detail">
       <UniqueIdentifier>{a1f2413e-2612-4b59-b77b-a4d4dcc2613e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\libs\glm\glm\gtx">
+    <Filter Include="Dependencies\glm\glm\gtx">
       <UniqueIdentifier>{7503a525-2049-4010-9882-34167734d0a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\libs\glm\glm\gtc">
+    <Filter Include="Dependencies\glm\glm\gtc">
       <UniqueIdentifier>{31d2c216-83fa-4e88-953f-1676be7e3706}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\libs\glm\glm\simd">
+    <Filter Include="Dependencies\glm\glm\simd">
       <UniqueIdentifier>{62fad012-c62a-49df-8fe4-948bb982c3f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\libs\minizip\aes">
+    <Filter Include="Dependencies\minizip">
+      <UniqueIdentifier>{e02ec89c-178d-4ea2-ab4d-d165c1271d9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\minizip\aes">
       <UniqueIdentifier>{53baab20-2a95-40ff-899f-e4f2d4983ee4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\libs\minizip\aes">
-      <UniqueIdentifier>{65310cf1-8336-42a6-b5a7-933a605065f9}</UniqueIdentifier>
+    <Filter Include="Dependencies\re2">
+      <UniqueIdentifier>{2dccaadf-3482-466e-8e16-a3b5fd3fe349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\re2\re2">
+      <UniqueIdentifier>{6b032b5c-948c-4ec0-b3ef-a092c5a5ac8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\re2\util">
+      <UniqueIdentifier>{e9ec7b3f-db5a-4998-b095-f15044f3cf4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\sdl">
+      <UniqueIdentifier>{3b97eb38-2f70-4421-9855-468d8215982c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\sdl_image">
+      <UniqueIdentifier>{9336183a-7b49-41f4-ac47-3a8467ae2a00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\sdl_ttf">
+      <UniqueIdentifier>{36905256-81f0-41c6-ad9f-9ef9edfb58d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\zlib">
+      <UniqueIdentifier>{7529824f-8772-439d-98a3-ebc183fcc29c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="libs\core\base64.c">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\md5.c">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\base64.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Event.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Geometry.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\GLText.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Graphics.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\GUI.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Nav.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Network.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Particles.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\phpbbhash.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Shaders.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Steam.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\stl_ext.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\Str.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\core\ZipFile.cpp">
-      <Filter>Source Files\libs\core</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\chipmunk.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+    <ClCompile Include="libs\chipmunk\src\cpVect.c">
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpArbiter.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpArray.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpBB.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\cpBBTree.c">
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpBody.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpCollision.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpHashSet.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpPolyShape.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpShape.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpSpace.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpSpaceComponent.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpSpaceHash.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpSpaceQuery.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpSpaceStep.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\cpVect.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
+    <ClCompile Include="libs\chipmunk\src\cpSpatialIndex.c">
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpConstraint.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
+    <ClCompile Include="libs\chipmunk\src\cpSweep1D.c">
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpDampedRotarySpring.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpDampedSpring.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpGearJoint.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpGrooveJoint.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpPinJoint.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpPivotJoint.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpRatchetJoint.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpRotaryLimitJoint.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\constraints\cpSimpleMotor.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
+    <ClCompile Include="libs\chipmunk\src\chipmunk.c">
+      <Filter>Dependencies\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\constraints\cpSlideJoint.c">
-      <Filter>Source Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpConstraint.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpDampedRotarySpring.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpDampedSpring.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpGearJoint.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpGrooveJoint.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpPinJoint.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpPivotJoint.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpRatchetJoint.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpRotaryLimitJoint.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\chipmunk\src\constraints\cpSimpleMotor.c">
+      <Filter>Dependencies\chipmunk\constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\base64.c">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\base64.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Event.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Geometry.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\GLText.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Graphics.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\GUI.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\md5.c">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Nav.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Network.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Particles.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\phpbbhash.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Shaders.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Steam.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\stl_ext.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\Str.cpp">
+      <Filter>Dependencies\core</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\core\ZipFile.cpp">
+      <Filter>Dependencies\core</Filter>
     </ClCompile>
     <ClCompile Include="libs\core\os\win32\Win32Main.cpp">
-      <Filter>Source Files\libs\core\os\win32</Filter>
+      <Filter>Dependencies\core\os\win32</Filter>
     </ClCompile>
     <ClCompile Include="libs\core\os\sdl\sdl_gamepad.cpp">
-      <Filter>Source Files\libs\core\os\sdl</Filter>
+      <Filter>Dependencies\core\os\sdl</Filter>
     </ClCompile>
     <ClCompile Include="libs\core\os\sdl\sdl.cpp">
-      <Filter>Source Files\libs\core\os\sdl</Filter>
+      <Filter>Dependencies\core\os\sdl</Filter>
     </ClCompile>
     <ClCompile Include="libs\glm\glm\detail\glm.cpp">
-      <Filter>Source Files\libs\glm</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\crypt.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\ioapi.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\ioapi_buf.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\ioapi_mem.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\iowin32.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\minishared.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\miniunz.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\minizip.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\unzip.c">
-      <Filter>Source Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\zip.c">
-      <Filter>Source Files\libs\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\bitstate.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\compile.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\dfa.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\filtered_re2.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\mimics_pcre.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\nfa.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\onepass.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\parse.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\perl_groups.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\prefilter.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\prefilter_tree.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\prog.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\re2.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\regexp.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\set.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\simplify.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\stringpiece.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\tostring.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\unicode_casefold.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\re2\unicode_groups.cc">
-      <Filter>Source Files\libs\re2\re2</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\util\pcre.cc">
-      <Filter>Source Files\libs\re2\util</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\util\rune.cc">
-      <Filter>Source Files\libs\re2\util</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\re2\util\strutil.cc">
-      <Filter>Source Files\libs\re2\util</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\aes_ni.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\aescrypt.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\aeskey.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\aestab.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\fileenc.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\hmac.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\prng.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\pwd2key.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClCompile>
     <ClCompile Include="libs\minizip\aes\sha1.c">
-      <Filter>Source Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\bitstate.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\compile.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\dfa.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\filtered_re2.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\mimics_pcre.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\nfa.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\onepass.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\parse.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\perl_groups.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\prefilter.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\prefilter_tree.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\prog.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\re2.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\regexp.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\set.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\simplify.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\stringpiece.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\tostring.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\unicode_casefold.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\re2\unicode_groups.cc">
+      <Filter>Dependencies\re2\re2</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\util\strutil.cc">
+      <Filter>Dependencies\re2\util</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\util\pcre.cc">
+      <Filter>Dependencies\re2\util</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\re2\util\rune.cc">
+      <Filter>Dependencies\re2\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\internal\Analysis.cpp">
+      <Filter>Source Files\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\internal\Utils.cpp">
+      <Filter>Source Files\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Polyfill.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\core\AudioEvent.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\base64.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Event.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\FrameLogger.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Geometry.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\GLText.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Graphics.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\GUI.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\List.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\md5.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Nav.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Orbit.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Outlaws.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Particles.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\phpbbhash.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Polyhedra.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Rand.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\RGB.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\SerialCore.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Shaders.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\SpacialHash.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\StdAfx_core.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Steam.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\stl_ext.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Str.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Tween.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\Vertex.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\ZipFile.h">
-      <Filter>Header Files\libs\core</Filter>
+      <Filter>Dependencies\core</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\chipmunk.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\chipmunk_ffi.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\chipmunk_private.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\chipmunk_types.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\chipmunk_unsafe.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpArbiter.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpBB.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpBody.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpPolyShape.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpShape.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpace.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpVect.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpConstraint.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpDampedRotarySpring.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpDampedSpring.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpGearJoint.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpGrooveJoint.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpPinJoint.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpPivotJoint.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpRatchetJoint.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpRotaryLimitJoint.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpSimpleMotor.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpSlideJoint.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\util.h">
-      <Filter>Header Files\libs\chipmunk\constraints</Filter>
+      <Filter>Dependencies\chipmunk\constraints</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\os\win32\platformincludes.h">
-      <Filter>Header Files\libs\core\os\win32</Filter>
+      <Filter>Dependencies\core\os\win32</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\os\sdl\sdl_inc.h">
-      <Filter>Header Files\libs\core\os\sdl</Filter>
+      <Filter>Dependencies\core\os\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\core\os\sdl\sdl_os.h">
-      <Filter>Header Files\libs\core\os\sdl</Filter>
+      <Filter>Dependencies\core\os\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Agent.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\AI.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\AI_modapi.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\BindingInterface.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\BlockPattern.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Blocks.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\BlockTool.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\ClusterWindow.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Colors.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Constructor.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\ConstructSelector.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\ControlPanel.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Digressions.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Editor.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Export.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\FlyCam.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Font.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Galaxy.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Game.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\GameZone.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Interface.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Keys.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\KickstarterNames.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Levels.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\MapObjective.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Message.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Mods.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Network.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Notification.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Options.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\ParticleEffects.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Player.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\PortPair.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Render.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Resources.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Save.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Sector.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Selection.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\SerialBlock.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Shapes.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Ships.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Sound.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Spacer.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\StagingTournament.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\StationInterface.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\StdAfx.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\TabMenu.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\TheBlocks.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Tournament.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Types.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Weapon.h">
-      <Filter>Header Files\libs\game</Filter>
+      <Filter>Dependencies\game</Filter>
     </ClInclude>
     <ClInclude Include="libs\glew\GL\glew.h">
-      <Filter>Header Files\libs\glew\GL</Filter>
+      <Filter>Dependencies\glew\GL</Filter>
     </ClInclude>
     <ClInclude Include="libs\glew\GL\glxew.h">
-      <Filter>Header Files\libs\glew\GL</Filter>
+      <Filter>Dependencies\glew\GL</Filter>
     </ClInclude>
     <ClInclude Include="libs\glew\GL\wglew.h">
-      <Filter>Header Files\libs\glew\GL</Filter>
+      <Filter>Dependencies\glew\GL</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\crypt.h">
-      <Filter>Header Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\ioapi.h">
-      <Filter>Header Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\ioapi_buf.h">
-      <Filter>Header Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\ioapi_mem.h">
-      <Filter>Header Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\iowin32.h">
-      <Filter>Header Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\minishared.h">
-      <Filter>Header Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\unzip.h">
-      <Filter>Header Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\zip.h">
-      <Filter>Header Files\libs\minizip</Filter>
+      <Filter>Dependencies\minizip</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\bitmap256.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\filtered_re2.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\prefilter.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\prefilter_tree.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\prog.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\re2.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\regexp.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\set.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\stringpiece.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\unicode_casefold.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\unicode_groups.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\re2\walker-inl.h">
-      <Filter>Header Files\libs\re2\re2</Filter>
+      <Filter>Dependencies\re2\re2</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\benchmark.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\flags.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\logging.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\mix.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\mutex.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\pcre.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\pod_array.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\sparse_array.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\sparse_set.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\strutil.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\test.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\utf.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\re2\util\util.h">
-      <Filter>Header Files\libs\re2\util</Filter>
+      <Filter>Dependencies\re2\util</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\begin_code.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\close_code.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_assert.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_atomic.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_audio.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_bits.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_blendmode.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_clipboard.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_android.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_iphoneos.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_macosx.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_minimal.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_pandora.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_psp.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_windows.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_winrt.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_config_wiz.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_copying.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_cpuinfo.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_egl.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_endian.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_error.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_events.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_filesystem.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_gamecontroller.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_gesture.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_haptic.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_hints.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_joystick.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_keyboard.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_keycode.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_loadso.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_log.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_main.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_messagebox.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_mouse.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_mutex.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_name.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_opengl.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_opengl_glext.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_opengles.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_opengles2.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_opengles2_gl2.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_opengles2_gl2ext.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_opengles2_gl2platform.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_opengles2_khrplatform.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_pixels.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_platform.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_power.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_quit.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_rect.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_render.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_revision.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_rwops.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_scancode.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_shape.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_stdinc.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_surface.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_system.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_syswm.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_assert.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_common.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_compare.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_crc32.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_font.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_fuzzer.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_harness.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_images.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_log.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_md5.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_memory.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_test_random.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_thread.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_timer.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_touch.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_types.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_version.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_video.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl\SDL_vulkan.h">
-      <Filter>Header Files\libs\sdl</Filter>
+      <Filter>Dependencies\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl_image\miniz.h">
-      <Filter>Header Files\libs\sdl_image</Filter>
+      <Filter>Dependencies\sdl_image</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl_image\nanosvg.h">
-      <Filter>Header Files\libs\sdl_image</Filter>
+      <Filter>Dependencies\sdl_image</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl_image\nanosvgrast.h">
-      <Filter>Header Files\libs\sdl_image</Filter>
+      <Filter>Dependencies\sdl_image</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl_image\SDL_image.h">
-      <Filter>Header Files\libs\sdl_image</Filter>
+      <Filter>Dependencies\sdl_image</Filter>
     </ClInclude>
     <ClInclude Include="libs\sdl_ttf\SDL_ttf.h">
-      <Filter>Header Files\libs\sdl_ttf</Filter>
+      <Filter>Dependencies\sdl_ttf</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\crc32.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\deflate.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\gzguts.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\inffast.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\inffixed.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\inflate.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\inftrees.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\trees.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\zconf.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\zlib.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\zlib\zutil.h">
-      <Filter>Header Files\libs\zlib</Filter>
+      <Filter>Dependencies\zlib</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\common.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\exponential.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\ext.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\fwd.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\geometric.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\glm.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\integer.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat2x2.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat2x3.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat2x4.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat3x2.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat3x3.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat3x4.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat4x2.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat4x3.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\mat4x4.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\matrix.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\packing.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\trigonometric.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\vec2.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\vec3.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\vec4.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\vector_relational.hpp">
-      <Filter>Header Files\libs\glm\glm</Filter>
+      <Filter>Dependencies\glm\glm</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\_features.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\_fixes.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\_noise.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\_swizzle.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\_swizzle_func.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\_vectorize.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\func_common.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\func_exponential.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\func_geometric.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\func_integer.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\func_matrix.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\func_packing.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\func_trigonometric.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\func_vector_relational.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\precision.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\setup.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_float.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_gentype.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_half.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_int.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat2x2.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat2x3.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat2x4.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat3x2.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat3x3.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat3x4.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat4x2.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat4x3.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_mat4x4.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_vec.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_vec1.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_vec2.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_vec3.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\detail\type_vec4.hpp">
-      <Filter>Header Files\libs\glm\glm\detail</Filter>
+      <Filter>Dependencies\glm\glm\detail</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\associated_min_max.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\bit.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\closest_point.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\color_space.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\color_space_YCoCg.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\common.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\compatibility.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\component_wise.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\dual_quaternion.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\euler_angles.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\extend.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\extended_min_max.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\fast_exponential.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\fast_square_root.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\fast_trigonometry.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\gradient_paint.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\handed_coordinate_space.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\hash.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\integer.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\intersect.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\io.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\log_base.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\matrix_cross_product.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\matrix_decompose.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\matrix_interpolation.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\matrix_major_storage.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\matrix_operation.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\matrix_query.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\matrix_transform_2d.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\mixed_product.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\norm.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\normal.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\normalize_dot.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\number_precision.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\optimum_pow.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\orthonormalize.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\perpendicular.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\polar_coordinates.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\projection.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\quaternion.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\range.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\raw_data.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\rotate_normalized_axis.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\rotate_vector.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\scalar_multiplication.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\scalar_relational.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\spline.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\std_based_type.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\string_cast.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\transform.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\transform2.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\type_aligned.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\type_trait.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\vector_angle.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\vector_query.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtx\wrap.hpp">
-      <Filter>Header Files\libs\glm\glm\gtx</Filter>
+      <Filter>Dependencies\glm\glm\gtx</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\bitfield.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\color_space.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\constants.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\epsilon.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\functions.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\integer.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\matrix_access.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\matrix_integer.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\matrix_inverse.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\matrix_transform.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\noise.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\packing.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\quaternion.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\random.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\reciprocal.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\round.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\type_aligned.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\type_precision.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\type_ptr.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\ulp.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\gtc\vec1.hpp">
-      <Filter>Header Files\libs\glm\glm\gtc</Filter>
+      <Filter>Dependencies\glm\glm\gtc</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\common.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\exponential.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\geometric.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\integer.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\matrix.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\packing.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\platform.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\trigonometric.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\glm\glm\simd\vector_relational.h">
-      <Filter>Header Files\libs\glm\glm\simd</Filter>
+      <Filter>Dependencies\glm\glm\simd</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\aes.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\aes_ni.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\aesopt.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\aestab.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\brg_endian.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\brg_types.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\fileenc.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\hmac.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\prng.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\pwd2key.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\sha1.h">
-      <Filter>Header Files\libs\minizip\aes</Filter>
+      <Filter>Dependencies\minizip\aes</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpArray.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpCollision.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpHashSet.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpaceHash.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
+      <Filter>Dependencies\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpatialIndex.h">
+      <Filter>Dependencies\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\internal\Analysis.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\internal\Macros.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\internal\Utils.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx_aiMod.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

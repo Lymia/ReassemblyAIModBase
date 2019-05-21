@@ -114,11 +114,7 @@ public:
     void registerHandler(uint64 types, INotifyHandler* handler);
     void notify(const Notification& notif);
 
-    static Notifier& instance()
-    {
-        static Notifier v;
-        return v;
-    }    
+	static Notifier& instance();
 };
 
 struct INotifyHandler {

@@ -1,8 +1,7 @@
 <Project>
   <PropertyGroup>
-    <ReassemblyCoreImports></ReassemblyCoreImports>
 	  <!-- Runtime includes -->
-    <ReassemblyCoreImports>$(ReassemblyBasePath)/include;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    <ReassemblyCoreImports>$(ReassemblyBasePath)/src</ReassemblyCoreImports>
     <!-- Reassembly includes -->
     <ReassemblyCoreImports>$(ReassemblyBasePath)/libs;$(ReassemblyCoreImports)</ReassemblyCoreImports>
 	  <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/core;$(ReassemblyCoreImports)</ReassemblyCoreImports>
