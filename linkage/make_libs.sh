@@ -28,10 +28,5 @@ compile_lib_file() {
 
 rm *.def *.exp *.lib
 compile_lib_file "$BIN_ROOT/ReassemblyRelease.exe" 
-# Dependencies
-compile_lib_file "$BIN_ROOT/glew32.dll"
-compile_lib_file "$BIN_ROOT/SDL2.dll"
-compile_lib_file "$BIN_ROOT/SDL2_image.dll"
-compile_lib_file "$BIN_ROOT/SDL2_ttf.dll"
 compile_lib_file "$BIN_ROOT/zlib1.dll"
 rm *.def *.exp
