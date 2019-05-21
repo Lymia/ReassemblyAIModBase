@@ -36,7 +36,7 @@ typedef struct cpPolyShape {
 	cpVect *verts, *tVerts;
 	cpSplittingPlane *planes, *tPlanes;
 	
-	cpFloat r;
+	float r;
 } cpPolyShape;
 
 /// Allocate a polygon shape.

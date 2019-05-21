@@ -81,7 +81,7 @@ struct cpArbiter {
 	cpFloat u;
 	 /// Calculated value to use for applying surface velocities.
 	/// Override in a pre-solve collision handler for custom behavior.
-	cpVect surface_vr;
+	// cpVect surface_vr;
 	
 	/// User definable data pointer.
 	/// The value will persist for the pair of shapes until the separate() callback is called.
@@ -150,9 +150,11 @@ void cpArbiterIgnore(cpArbiter *arb);
 static inline void cpArbiterGetShapes(const cpArbiter *arb, cpShape **a, cpShape **b)
 {
 	if(arb->CP_PRIVATE(swappedColl)){
-		(*a) = arb->CP_PRIVATE(b), (*b) = arb->CP_PRIVATE(a);
+        (*a) = arb->CP_PRIVATE(b);
+        (*b) = arb->CP_PRIVATE(a);
 	} else {
-		(*a) = arb->CP_PRIVATE(a), (*b) = arb->CP_PRIVATE(b);
+        (*a) = arb->CP_PRIVATE(a);
+        (*b) = arb->CP_PRIVATE(b);
 	}
 }
 /// A macro shortcut for defining and retrieving the shapes from an arbiter.

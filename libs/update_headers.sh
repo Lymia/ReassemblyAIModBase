@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Headers required:
-# - chipmunk 6.2.2 (statically linked)
+# - chipmunk (statically linked)
 # - glew 1.11.0 (glew32.dll)
 # - glm 0.9.7.0 (statically linked)
 # - minizip 1.2.x (statically linked)
@@ -13,7 +13,7 @@
 
 LIBS="$(pwd)"
 
-CHIPMUNK_VERSION=6.2.2
+CHIPMUNK_VERSION=a596bdb71db33c61c52c1ef94074737cb104c99f
 GLEW_VERSION=1.11.0
 GLM_VERSION=0.9.7.0
 MINIZIP_VERSION=1.2
@@ -34,9 +34,9 @@ mkdir download_temp || exit 1
 cd download_temp
 
 # Download chipmunk sources
-wget https://chipmunk-physics.net/release/Chipmunk-6.x/Chipmunk-$CHIPMUNK_VERSION.tgz
-tar xvf Chipmunk-$CHIPMUNK_VERSION.tgz || exit 1
-cp -vr Chipmunk-$CHIPMUNK_VERSION/{LICENSE.txt,src,include} "$LIBS/chipmunk" || exit 1
+wget -O Chipmunk2D-$CHIPMUNK_VERSION.tgz https://github.com/manylegged/Chipmunk2D/archive/$CHIPMUNK_VERSION.tar.gz
+tar xvf Chipmunk2D-$CHIPMUNK_VERSION.tgz || exit 1
+cp -vr Chipmunk2D-$CHIPMUNK_VERSION/{LICENSE.txt,src,include} "$LIBS/chipmunk" || exit 1
 rm -v "$LIBS/chipmunk/src/CMakeLists.txt" || exit 1
 
 # Download glew headers

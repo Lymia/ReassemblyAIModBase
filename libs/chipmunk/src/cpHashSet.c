@@ -22,23 +22,6 @@
 #include "chipmunk_private.h"
 #include "prime.h"
 
-typedef struct cpHashSetBin {
-	void *elt;
-	cpHashValue hash;
-	struct cpHashSetBin *next;
-} cpHashSetBin;
-
-struct cpHashSet {
-	unsigned int entries, size;
-	
-	cpHashSetEqlFunc eql;
-	void *default_value;
-	
-	cpHashSetBin **table;
-	cpHashSetBin *pooledBins;
-	
-	cpArray *allocatedBuffers;
-};
 
 void
 cpHashSetFree(cpHashSet *set)
@@ -133,6 +116,7 @@ getUnusedBin(cpHashSet *set)
 		// Pool is exhausted, make more
 		int count = CP_BUFFER_BYTES/sizeof(cpHashSetBin);
 		cpAssertHard(count, "Internal Error: Buffer size is too small.");
+        /* cpInfo("allocated %d hash set bins at %d bytes", count, sizeof(cpHashSetBin)); */
 		
 		cpHashSetBin *buffer = (cpHashSetBin *)cpcalloc(1, CP_BUFFER_BYTES);
 		cpArrayPush(set->allocatedBuffers, buffer);
@@ -215,18 +199,18 @@ cpHashSetFind(cpHashSet *set, cpHashValue hash, void *ptr)
 	return (bin ? bin->elt : set->default_value);
 }
 
-void
-cpHashSetEach(cpHashSet *set, cpHashSetIteratorFunc func, void *data)
-{
-	for(unsigned int i=0; i<set->size; i++){
-		cpHashSetBin *bin = set->table[i];
-		while(bin){
-			cpHashSetBin *next = bin->next;
-			func(bin->elt, data);
-			bin = next;
-		}
-	}
-}
+/* void */
+/* cpHashSetEach(cpHashSet *set, cpHashSetIteratorFunc func, void *data) */
+/* { */
+/* 	for(unsigned int i=0; i<set->size; i++){ */
+/* 		cpHashSetBin *bin = set->table[i]; */
+/* 		while(bin){ */
+/* 			cpHashSetBin *next = bin->next; */
+/* 			func(bin->elt, data); */
+/* 			bin = next; */
+/* 		} */
+/* 	} */
+/* } */
 
 void
 cpHashSetFilter(cpHashSet *set, cpHashSetFilterFunc func, void *data)

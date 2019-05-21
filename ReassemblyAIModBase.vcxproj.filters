@@ -195,9 +195,6 @@
     <ClCompile Include="libs\chipmunk\src\cpBB.c">
       <Filter>Source Files\libs\chipmunk</Filter>
     </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\cpBBTree.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
-    </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpBody.c">
       <Filter>Source Files\libs\chipmunk</Filter>
     </ClCompile>
@@ -226,12 +223,6 @@
       <Filter>Source Files\libs\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpSpaceStep.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\cpSpatialIndex.c">
-      <Filter>Source Files\libs\chipmunk</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\chipmunk\src\cpSweep1D.c">
       <Filter>Source Files\libs\chipmunk</Filter>
     </ClCompile>
     <ClCompile Include="libs\chipmunk\src\cpVect.c">
@@ -525,9 +516,6 @@
       <Filter>Header Files\libs\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpace.h">
-      <Filter>Header Files\libs\chipmunk</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpatialIndex.h">
       <Filter>Header Files\libs\chipmunk</Filter>
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpVect.h">
@@ -1597,6 +1585,18 @@
     </ClInclude>
     <ClInclude Include="libs\minizip\aes\sha1.h">
       <Filter>Header Files\libs\minizip\aes</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpArray.h">
+      <Filter>Header Files\libs\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpCollision.h">
+      <Filter>Header Files\libs\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpHashSet.h">
+      <Filter>Header Files\libs\chipmunk</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpaceHash.h">
+      <Filter>Header Files\libs\chipmunk</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

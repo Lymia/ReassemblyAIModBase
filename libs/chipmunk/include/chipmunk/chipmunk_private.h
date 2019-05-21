@@ -28,12 +28,11 @@
 // TODO: Eww. Magic numbers.
 #define MAGIC_EPSILON 1e-5
 
-//MARK: cpArray
+#if _MSC_VER
+#pragma warning(disable: 4244)  // conversion from double to float
+#endif
 
-struct cpArray {
-	int num, max;
-	void **arr;
-};
+//MARK: cpArray
 
 cpArray *cpArrayNew(int size);
 
@@ -90,7 +89,42 @@ void *cpHashSetRemove(cpHashSet *set, cpHashValue hash, void *ptr);
 void *cpHashSetFind(cpHashSet *set, cpHashValue hash, void *ptr);
 
 typedef void (*cpHashSetIteratorFunc)(void *elt, void *data);
-void cpHashSetEach(cpHashSet *set, cpHashSetIteratorFunc func, void *data);
+
+// void cpHashSetEach(cpHashSet *set, cpHashSetIteratorFunc func, void *data);
+
+typedef struct cpHashSetBin {
+	void *elt;
+	cpHashValue hash;
+	struct cpHashSetBin *next;
+} cpHashSetBin;
+
+struct cpHashSet {
+	unsigned int entries, size;
+	
+	cpHashSetEqlFunc eql;
+	void *default_value;
+	
+	cpHashSetBin **table;
+	cpHashSetBin *pooledBins;
+	
+	cpArray *allocatedBuffers;
+};
+
+static inline void
+cpHashSetEach(cpHashSet *set, cpHashSetIteratorFunc func, void *data)
+{
+    unsigned int size = set->size;
+    cpHashSetBin **table = set->table;
+    
+	for(unsigned int i=0; i<size; i++){
+		cpHashSetBin *bin = table[i];
+		while(bin){
+			cpHashSetBin *next = bin->next;
+			func(bin->elt, data);
+			bin = next;
+		}
+	}
+}
 
 typedef cpBool (*cpHashSetFilterFunc)(void *elt, void *data);
 void cpHashSetFilter(cpHashSet *set, cpHashSetFilterFunc func, void *data);
@@ -146,7 +180,7 @@ CircleSegmentQuery(cpShape *shape, cpVect center, cpFloat r, cpVect a, cpVect b,
 	}
 }
 
-// TODO doesn't really need to be inline, but need a better place to put this function
+// TODO doesn't really need to be static inline, but need a better place to put this function
 static inline cpSplittingPlane
 cpSplittingPlaneNew(cpVect a, cpVect b)
 {
@@ -252,3 +286,10 @@ void cpArbiterUpdate(cpArbiter *arb, cpContact *contacts, int numContacts, struc
 void cpArbiterPreStep(cpArbiter *arb, cpFloat dt, cpFloat bias, cpFloat slop);
 void cpArbiterApplyCachedImpulse(cpArbiter *arb, cpFloat dt_coef);
 void cpArbiterApplyImpulse(cpArbiter *arb);
+
+/// Allocated size for various Chipmunk buffers
+#ifndef CP_BUFFER_BYTES
+	#define CP_BUFFER_BYTES (128*1024)
+#endif
+
+void *cpShapePoolAlloc(int size);

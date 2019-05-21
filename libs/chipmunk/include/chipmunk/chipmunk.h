@@ -44,6 +44,7 @@ extern "C" {
 #endif
 
 void cpMessage(const char *condition, const char *file, int line, int isError, int isHardError, const char *message, ...);
+void cpInfo(const char *message, ...);
 #ifdef NDEBUG
 	#define	cpAssertWarn(__condition__, ...)
 #else
@@ -64,11 +65,6 @@ void cpMessage(const char *condition, const char *file, int line, int isError, i
 	
 /// @defgroup misc Misc
 /// @{
-
-/// Allocated size for various Chipmunk buffers
-#ifndef CP_BUFFER_BYTES
-	#define CP_BUFFER_BYTES (32*1024)
-#endif
 
 #ifndef cpcalloc
 	/// Chipmunk calloc() alias.
@@ -117,6 +113,12 @@ typedef struct cpSpace cpSpace;
 
 /// Version string.
 extern const char *cpVersionString;
+
+
+// IMPLEMENT ME
+void updateVelocities(cpSpace *space, cpFloat dt);
+void updatePositions(cpSpace *space, cpFloat dt);
+
 
 /// @deprecated
 void cpInitChipmunk(void);
@@ -215,8 +217,18 @@ cpBool cpSpaceShapeQuery_b(cpSpace *space, cpShape *shape, cpSpaceShapeQueryBloc
 static inline cpVect operator *(const cpVect v, const cpFloat s){return cpvmult(v, s);}
 static inline cpVect operator +(const cpVect v1, const cpVect v2){return cpvadd(v1, v2);}
 static inline cpVect operator -(const cpVect v1, const cpVect v2){return cpvsub(v1, v2);}
+static inline cpVect &operator *=(cpVect &v, const cpFloat s){return v = cpvmult(v, s);}
+static inline cpVect &operator +=(cpVect &v1, const cpVect v2){return v1 = cpvadd(v1, v2);}
+static inline cpVect &operator -=(cpVect &v1, const cpVect v2){return v1 = cpvsub(v1, v2);}
 static inline cpBool operator ==(const cpVect v1, const cpVect v2){return cpveql(v1, v2);}
 static inline cpVect operator -(const cpVect v){return cpvneg(v);}
 
 #endif
 #endif
+
+
+struct cpArray {
+	int num, max;
+	void **arr;
+};
+

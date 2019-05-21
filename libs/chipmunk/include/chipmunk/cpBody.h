@@ -41,20 +41,23 @@ typedef struct cpComponentNode {
 /// Chipmunk's rigid body struct.
 struct cpBody {
 	/// Function that is called to integrate the body's velocity. (Defaults to cpBodyUpdateVelocity)
-	cpBodyVelocityFunc velocity_func;
+	// cpBodyVelocityFunc velocity_func;
 	
 	/// Function that is called to integrate the body's position. (Defaults to cpBodyUpdatePosition)
-	cpBodyPositionFunc position_func;
+	// cpBodyPositionFunc position_func;
+
+    int integrate_type;
 	
 	/// Mass of the body.
 	/// Must agree with cpBody.m_inv! Use cpBodySetMass() when changing the mass for this reason.
-	cpFloat m;
+	float m;
+    float i;
+
 	/// Mass inverse.
 	cpFloat m_inv;
 	
 	/// Moment of inertia of the body.
 	/// Must agree with cpBody.i_inv! Use cpBodySetMoment() when changing the moment for this reason.
-	cpFloat i;
 	/// Moment of inertia inverse.
 	cpFloat i_inv;
 	
@@ -67,11 +70,12 @@ struct cpBody {
 	
 	/// Rotation of the body around it's center of gravity in radians.
 	/// Must agree with cpBody.rot! Use cpBodySetAngle() when changing the angle for this reason.
-	cpFloat a;
+	float a;
 	/// Angular velocity of the body around it's center of gravity in radians/second.
-	cpFloat w;
+	float w;
 	/// Torque applied to the body around it's center of gravity.
-	cpFloat t;
+	float t;
+	CP_PRIVATE(float w_bias);
 	
 	/// Cached unit length vector representing the angle of the body.
 	/// Used for fast rotations using cpvrotate().
@@ -83,18 +87,16 @@ struct cpBody {
 	cpDataPointer data;
 	
 	/// Maximum velocity allowed when updating the velocity.
-	cpFloat v_limit;
-	/// Maximum rotational rate (in radians/second) allowed when updating the angular velocity.
-	cpFloat w_limit;
-	
-	CP_PRIVATE(cpVect v_bias);
-	CP_PRIVATE(cpFloat w_bias);
+	// cpFloat v_limit;
+	// Maximum rotational rate (in radians/second) allowed when updating the angular velocity.
+	// cpFloat w_limit;
 	
 	CP_PRIVATE(cpSpace *space);
+	CP_PRIVATE(cpVect v_bias);
 	
 	CP_PRIVATE(cpShape *shapeList);
 	CP_PRIVATE(cpArbiter *arbiterList);
-	CP_PRIVATE(cpConstraint *constraintList);
+	// CP_PRIVATE(cpConstraint *constraintList);
 	
 	CP_PRIVATE(cpComponentNode node);
 };
@@ -103,6 +105,7 @@ struct cpBody {
 cpBody* cpBodyAlloc(void);
 /// Initialize a cpBody.
 cpBody* cpBodyInit(cpBody *body, cpFloat m, cpFloat i);
+cpBody* cpBodyInit0(cpBody *body);
 /// Allocate and initialize a cpBody.
 cpBody* cpBodyNew(cpFloat m, cpFloat i);
 
@@ -191,9 +194,11 @@ void cpBodySetAngle(cpBody *body, cpFloat a);
 CP_DefineBodyStructProperty(cpFloat, w, AngVel)
 CP_DefineBodyStructProperty(cpFloat, t, Torque)
 CP_DefineBodyStructGetter(cpVect, rot, Rot)
-CP_DefineBodyStructProperty(cpFloat, v_limit, VelLimit)
-CP_DefineBodyStructProperty(cpFloat, w_limit, AngVelLimit)
+//CP_DefineBodyStructProperty(cpFloat, v_limit, VelLimit)
+//CP_DefineBodyStructProperty(cpFloat, w_limit, AngVelLimit)
 CP_DefineBodyStructProperty(cpDataPointer, data, UserData)
+
+void cpBodySetPosAngle(cpBody *body, cpVect pos, cpFloat a);
 
 /// Default Integration functions.
 void cpBodyUpdateVelocity(cpBody *body, cpVect gravity, cpFloat damping, cpFloat dt);

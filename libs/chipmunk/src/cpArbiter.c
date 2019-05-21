@@ -184,17 +184,17 @@ cpArbiterIgnore(cpArbiter *arb)
 	arb->state = cpArbiterStateIgnore;
 }
 
-cpVect
-cpArbiterGetSurfaceVelocity(cpArbiter *arb)
-{
-	return cpvmult(arb->surface_vr, arb->swappedColl ? -1.0f : 1.0);
-}
+/* cpVect */
+/* cpArbiterGetSurfaceVelocity(cpArbiter *arb) */
+/* { */
+/* 	return cpvmult(arb->surface_vr, arb->swappedColl ? -1.0f : 1.0); */
+/* } */
 
-void
-cpArbiterSetSurfaceVelocity(cpArbiter *arb, cpVect vr)
-{
-	arb->surface_vr = cpvmult(vr, arb->swappedColl ? -1.0f : 1.0);
-}
+/* void */
+/* cpArbiterSetSurfaceVelocity(cpArbiter *arb, cpVect vr) */
+/* { */
+/* 	arb->surface_vr = cpvmult(vr, arb->swappedColl ? -1.0f : 1.0); */
+/* } */
 
 
 cpArbiter*
@@ -205,7 +205,7 @@ cpArbiterInit(cpArbiter *arb, cpShape *a, cpShape *b)
 	
 	arb->e = 0.0f;
 	arb->u = 0.0f;
-	arb->surface_vr = cpvzero;
+	/* arb->surface_vr = cpvzero; */
 	
 	arb->numContacts = 0;
 	arb->contacts = NULL;
@@ -256,9 +256,9 @@ cpArbiterUpdate(cpArbiter *arb, cpContact *contacts, int numContacts, cpCollisio
 	
 	// Currently all contacts will have the same normal.
 	// This may change in the future.
-	cpVect n = (numContacts ? contacts[0].n : cpvzero);
-	cpVect surface_vr = cpvsub(a->surface_v, b->surface_v);
-	arb->surface_vr = cpvsub(surface_vr, cpvmult(n, cpvdot(surface_vr, n)));
+	/* cpVect n = (numContacts ? contacts[0].n : cpvzero); */
+	/* cpVect surface_vr = cpvsub(a->surface_v, b->surface_v); */
+	/* arb->surface_vr = cpvsub(surface_vr, cpvmult(n, cpvdot(surface_vr, n))); */
 	
 	// For collisions between two similar primitive types, the order could have been swapped.
 	arb->a = a; arb->body_a = a->body;
@@ -316,7 +316,7 @@ cpArbiterApplyImpulse(cpArbiter *arb)
 {
 	cpBody *a = arb->body_a;
 	cpBody *b = arb->body_b;
-	cpVect surface_vr = arb->surface_vr;
+	/* cpVect surface_vr = arb->surface_vr; */
 	cpFloat friction = arb->u;
 
 	for(int i=0; i<arb->numContacts; i++){
@@ -328,7 +328,8 @@ cpArbiterApplyImpulse(cpArbiter *arb)
 		
 		cpVect vb1 = cpvadd(a->v_bias, cpvmult(cpvperp(r1), a->w_bias));
 		cpVect vb2 = cpvadd(b->v_bias, cpvmult(cpvperp(r2), b->w_bias));
-		cpVect vr = cpvadd(relative_velocity(a, b, r1, r2), surface_vr);
+		/* cpVect vr = cpvadd(relative_velocity(a, b, r1, r2), surface_vr); */
+        cpVect vr = relative_velocity(a, b, r1, r2);
 		
 		cpFloat vbn = cpvdot(cpvsub(vb2, vb1), n);
 		cpFloat vrn = cpvdot(vr, n);

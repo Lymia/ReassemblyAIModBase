@@ -30,7 +30,6 @@
     <ClCompile Include="libs\chipmunk\src\cpArbiter.c" />
     <ClCompile Include="libs\chipmunk\src\cpArray.c" />
     <ClCompile Include="libs\chipmunk\src\cpBB.c" />
-    <ClCompile Include="libs\chipmunk\src\cpBBTree.c" />
     <ClCompile Include="libs\chipmunk\src\cpBody.c" />
     <ClCompile Include="libs\chipmunk\src\cpCollision.c" />
     <ClCompile Include="libs\chipmunk\src\cpHashSet.c" />
@@ -41,8 +40,6 @@
     <ClCompile Include="libs\chipmunk\src\cpSpaceHash.c" />
     <ClCompile Include="libs\chipmunk\src\cpSpaceQuery.c" />
     <ClCompile Include="libs\chipmunk\src\cpSpaceStep.c" />
-    <ClCompile Include="libs\chipmunk\src\cpSpatialIndex.c" />
-    <ClCompile Include="libs\chipmunk\src\cpSweep1D.c" />
     <ClCompile Include="libs\chipmunk\src\cpVect.c" />
     <ClCompile Include="libs\core\base64.c" />
     <ClCompile Include="libs\core\base64.cpp" />
@@ -127,12 +124,15 @@
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\cpSlideJoint.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\util.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpArbiter.h" />
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpArray.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpBB.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpBody.h" />
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpCollision.h" />
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpHashSet.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpPolyShape.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpShape.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpace.h" />
-    <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpatialIndex.h" />
+    <ClInclude Include="libs\chipmunk\include\chipmunk\cpSpaceHash.h" />
     <ClInclude Include="libs\chipmunk\include\chipmunk\cpVect.h" />
     <ClInclude Include="libs\core\AudioEvent.h" />
     <ClInclude Include="libs\core\base64.h" />

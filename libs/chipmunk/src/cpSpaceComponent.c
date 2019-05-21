@@ -73,10 +73,10 @@ cpSpaceActivateBody(cpSpace *space, cpBody *body)
 			}
 		}
 		
-		CP_BODY_FOREACH_CONSTRAINT(body, constraint){
-			cpBody *bodyA = constraint->a;
-			if(body == bodyA || cpBodyIsStatic(bodyA)) cpArrayPush(space->constraints, constraint);
-		}
+		/* CP_BODY_FOREACH_CONSTRAINT(body, constraint){ */
+		/* 	cpBody *bodyA = constraint->a; */
+		/* 	if(body == bodyA || cpBodyIsStatic(bodyA)) cpArrayPush(space->constraints, constraint); */
+		/* } */
 	}
 }
 
@@ -105,10 +105,10 @@ cpSpaceDeactivateBody(cpSpace *space, cpBody *body)
 		}
 	}
 		
-	CP_BODY_FOREACH_CONSTRAINT(body, constraint){
-		cpBody *bodyA = constraint->a;
-		if(body == bodyA || cpBodyIsStatic(bodyA)) cpArrayDeleteObj(space->constraints, constraint);
-	}
+	/* CP_BODY_FOREACH_CONSTRAINT(body, constraint){ */
+	/* 	cpBody *bodyA = constraint->a; */
+	/* 	if(body == bodyA || cpBodyIsStatic(bodyA)) cpArrayDeleteObj(space->constraints, constraint); */
+	/* } */
 }
 
 static inline cpBody *
@@ -203,7 +203,7 @@ FloodFillComponent(cpBody *root, cpBody *body)
 		if(other_root == NULL){
 			ComponentAdd(root, body);
 			CP_BODY_FOREACH_ARBITER(body, arb) FloodFillComponent(root, (body == arb->body_a ? arb->body_b : arb->body_a));
-			CP_BODY_FOREACH_CONSTRAINT(body, constraint) FloodFillComponent(root, (body == constraint->a ? constraint->b : constraint->a));
+			/* CP_BODY_FOREACH_CONSTRAINT(body, constraint) FloodFillComponent(root, (body == constraint->a ? constraint->b : constraint->a)); */
 		} else {
 			cpAssertSoft(other_root == root, "Internal Error: Inconsistency dectected in the contact graph.");
 		}

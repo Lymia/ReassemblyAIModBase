@@ -59,7 +59,8 @@ cpSpacePointQuery(cpSpace *space, cpVect point, cpLayers layers, cpGroup group, 
 static void
 PointQueryFirst(cpShape *shape, cpShape **outShape)
 {
-	if(!shape->sensor) *outShape = shape;
+	/* if(!shape->sensor)  */
+    *outShape = shape;
 }
 
 cpShape *
@@ -112,7 +113,7 @@ static cpCollisionID
 NearestPointQueryNearest(struct NearestPointQueryContext *context, cpShape *shape, cpCollisionID id, cpNearestPointQueryInfo *out)
 {
 	if(
-		!(shape->group && context->group == shape->group) && (context->layers&shape->layers) && !shape->sensor
+		!(shape->group && context->group == shape->group) && (context->layers&shape->layers) /* && !shape->sensor */
 	){
 		cpNearestPointQueryInfo info;
 		cpShapeNearestPointQuery(shape, context->point, &info);
@@ -149,58 +150,54 @@ cpSpaceNearestPointQueryNearest(cpSpace *space, cpVect point, cpFloat maxDistanc
 
 //MARK: Segment Query Functions
 
-struct SegmentQueryContext {
-	cpVect start, end;
-	cpLayers layers;
-	cpGroup group;
-	cpSpaceSegmentQueryFunc func;
-};
+static cpBool ignoreGroup2(cpGroup a, cpGroup b)
+{
+    return a && (b == -a || (b > 0 && b == a));
+}
 
-static cpFloat
+cpFloat
 SegmentQuery(struct SegmentQueryContext *context, cpShape *shape, void *data)
 {
 	cpSegmentQueryInfo info;
 	
 	if(
-		!(shape->group && context->group == shape->group) && (context->layers&shape->layers) &&
+		!(shape->group && context->group == shape->group) &&
+        !ignoreGroup2(shape->group2, context->group2) &&
+        (context->layers&shape->layers) &&
 		cpShapeSegmentQuery(shape, context->start, context->end, &info)
 	){
-		context->func(shape, info.t, info.n, data);
+		context->t = context->func(shape, info.t, info.n, data);
 	}
 	
-	return 1.0f;
+	return context->t;
 }
 
 void
-cpSpaceSegmentQuery(cpSpace *space, cpVect start, cpVect end, cpLayers layers, cpGroup group, cpSpaceSegmentQueryFunc func, void *data)
+cpSpaceSegmentQuery(cpSpace *space, cpVect start, cpVect end, cpLayers layers, cpGroup group, cpGroup group2, cpSpaceSegmentQueryFunc func, void *data)
 {
 	struct SegmentQueryContext context = {
 		start, end,
-		layers, group,
+		layers, group, group2,
+        1.0,
 		func,
 	};
 	
 	cpSpaceLock(space); {
-    cpSpatialIndexSegmentQuery(space->staticShapes, &context, start, end, 1.0f, (cpSpatialIndexSegmentQueryFunc)SegmentQuery, data);
-    cpSpatialIndexSegmentQuery(space->activeShapes, &context, start, end, 1.0f, (cpSpatialIndexSegmentQueryFunc)SegmentQuery, data);
+    cpSpatialIndexSegmentQuery(space->staticShapes, &context, start, end, context.t, data);
+    cpSpatialIndexSegmentQuery(space->activeShapes, &context, start, end, context.t, data);
 	} cpSpaceUnlock(space, cpTrue);
 }
 
 static cpFloat
-SegmentQueryFirst(struct SegmentQueryContext *context, cpShape *shape, cpSegmentQueryInfo *out)
+SegmentQueryFirst(cpShape *shape, cpFloat t, cpVect n, void *data)
 {
-	cpSegmentQueryInfo info;
-	
-	if(
-		!(shape->group && context->group == shape->group) && (context->layers&shape->layers) &&
-		!shape->sensor &&
-		cpShapeSegmentQuery(shape, context->start, context->end, &info) &&
-		info.t < out->t
-	){
-		(*out) = info;
-	}
-	
-	return out->t;
+    cpSegmentQueryInfo *out = (cpSegmentQueryInfo*)data;
+    if (/* !shape->sensor &&  */t < out->t)
+    {
+        cpSegmentQueryInfo info = { shape, t, n };
+        (*out) = info;
+    }
+    return out->t;
 }
 
 cpShape *
@@ -215,12 +212,13 @@ cpSpaceSegmentQueryFirst(cpSpace *space, cpVect start, cpVect end, cpLayers laye
 	
 	struct SegmentQueryContext context = {
 		start, end,
-		layers, group,
-		NULL
+		layers, group, CP_NO_GROUP,
+        1.0,
+		SegmentQueryFirst
 	};
 	
-	cpSpatialIndexSegmentQuery(space->staticShapes, &context, start, end, 1.0f, (cpSpatialIndexSegmentQueryFunc)SegmentQueryFirst, out);
-	cpSpatialIndexSegmentQuery(space->activeShapes, &context, start, end, out->t, (cpSpatialIndexSegmentQueryFunc)SegmentQueryFirst, out);
+	cpSpatialIndexSegmentQuery(space->staticShapes, &context, start, end, 1.0f, out);
+	cpSpatialIndexSegmentQuery(space->activeShapes, &context, start, end, out->t, out);
 	
 	return out->shape;
 }
@@ -273,6 +271,7 @@ ShapeQuery(cpShape *a, cpShape *b, cpCollisionID id, struct ShapeQueryContext *c
 	// Reject any of the simple cases
 	if(
 		(a->group && a->group == b->group) ||
+        ignoreGroup2(a->group2, b->group2) ||
 		!(a->layers & b->layers) ||
 		a == b
 	) return id;
@@ -289,7 +288,7 @@ ShapeQuery(cpShape *a, cpShape *b, cpCollisionID id, struct ShapeQueryContext *c
 	}
 	
 	if(numContacts){
-		context->anyCollision = !(a->sensor || b->sensor);
+		context->anyCollision = cpTrue /* !(a->sensor || b->sensor) */;
 		
 		if(context->func){
 			cpContactPointSet set;

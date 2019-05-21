@@ -140,7 +140,8 @@ getEmptyBin(cpSpaceHash *hash)
 		// Pool is exhausted, make more
 		int count = CP_BUFFER_BYTES/sizeof(cpSpaceHashBin);
 		cpAssertHard(count, "Internal Error: Buffer size is too small.");
-		
+		/* cpInfo("allocated %d spacial hash bins at %d bytes", count, sizeof(cpSpaceHashBin)); */
+        
 		cpSpaceHashBin *buffer = (cpSpaceHashBin *)cpcalloc(1, CP_BUFFER_BYTES);
 		cpArrayPush(hash->allocatedBuffers, buffer);
 		
@@ -168,7 +169,7 @@ cpSpaceHashAllocTable(cpSpaceHash *hash, int numcells)
 	hash->table = (cpSpaceHashBin **)cpcalloc(numcells, sizeof(cpSpaceHashBin *));
 }
 
-static inline cpSpatialIndexClass *Klass();
+static cpSpatialIndexClass *Klass(void);
 
 cpSpatialIndex *
 cpSpaceHashInit(cpSpaceHash *hash, cpFloat celldim, int numcells, cpSpatialIndexBBFunc bbfunc, cpSpatialIndex *staticIndex)
@@ -211,16 +212,16 @@ cpSpaceHashDestroy(cpSpaceHash *hash)
 
 //MARK: Helper Functions
 
-static inline cpBool
-containsHandle(cpSpaceHashBin *bin, cpHandle *hand)
-{
-	while(bin){
-		if(bin->handle == hand) return cpTrue;
-		bin = bin->next;
-	}
+/* static inline cpBool */
+/* containsHandle(cpSpaceHashBin *bin, cpHandle *hand) */
+/* { */
+/* 	while(bin){ */
+/* 		if(bin->handle == hand) return cpTrue; */
+/* 		bin = bin->next; */
+/* 	} */
 	
-	return cpFalse;
-}
+/* 	return cpFalse; */
+/* } */
 
 // The hash function itself.
 static inline cpHashValue
@@ -255,7 +256,9 @@ hashHandle(cpSpaceHash *hash, cpHandle *hand, cpBB bb)
 			cpSpaceHashBin *bin = hash->table[idx];
 			
 			// Don't add an object twice to the same cell.
-			if(containsHandle(bin, hand)) continue;
+			/* if(containsHandle(bin, hand)) continue; */
+            if (bin && bin->handle == hand)
+                continue;
 
 			cpHandleRetain(hand);
 			// Insert a new bin for the handle in this cell.
@@ -289,7 +292,7 @@ cpSpaceHashRehashObject(cpSpaceHash *hash, void *obj, cpHashValue hashid)
 	}
 }
 
-static void
+static inline void
 rehash_helper(cpHandle *hand, cpSpaceHash *hash)
 {
 	hashHandle(hash, hand, hash->spatialIndex.bbfunc(hand->obj));
@@ -313,18 +316,40 @@ cpSpaceHashRemove(cpSpaceHash *hash, void *obj, cpHashValue hashid)
 	}
 }
 
+#define INLINE_HASH_SET_EACH 1
+
+
+#if !INLINE_HASH_SET_EACH
 typedef struct eachContext {
 	cpSpatialIndexIteratorFunc func;
 	void *data;
 } eachContext;
 
-static void eachHelper(cpHandle *hand, eachContext *context){context->func(hand->obj, context->data);}
+static inline void eachHelper(cpHandle *hand, eachContext *context){context->func(hand->obj, context->data);}
+
+#endif
 
 static void
 cpSpaceHashEach(cpSpaceHash *hash, cpSpatialIndexIteratorFunc func, void *data)
 {
+#if !INLINE_HASH_SET_EACH
 	eachContext context = {func, data};
 	cpHashSetEach(hash->handleSet, (cpHashSetIteratorFunc)eachHelper, &context);
+#else
+    cpHashSet *set = hash->handleSet;
+    
+    unsigned int size = set->size;
+    cpHashSetBin **table = set->table;
+    
+	for(unsigned int i=0; i<size; i++){
+		cpHashSetBin *bin = table[i];
+		while(bin){
+			cpHashSetBin *next = bin->next;
+			func(((cpHandle*)bin->elt)->obj, data);
+			bin = next;
+		}
+	}
+#endif
 }
 
 static void
@@ -373,6 +398,29 @@ query_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, void *obj, cpSpatialIn
 	}
 }
 
+static inline void
+collideShapes_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, cpShape *obj, cpSpace *space)
+{
+    cpTimestamp hash_stamp = hash->stamp;
+	restart:
+	for(cpSpaceHashBin *bin = *bin_ptr; bin; bin = bin->next){
+		cpHandle *hand = bin->handle;
+		cpShape *other = (cpShape*) hand->obj;
+		
+		if(hand->stamp == hash_stamp || obj == other){
+			continue;
+		} else if(other){
+            cpSpaceCollideShapes(obj, other, 0, space);
+			hand->stamp = hash_stamp;
+		} else {
+			// The object for this handle has been removed
+			// cleanup this cell and restart the query
+			remove_orphaned_handles(hash, bin_ptr);
+			goto restart; // GCC not smart enough/able to tail call an inlined function.
+		}
+	}
+}
+
 static void
 cpSpaceHashQuery(cpSpaceHash *hash, void *obj, cpBB bb, cpSpatialIndexQueryFunc func, void *data)
 {
@@ -399,23 +447,22 @@ cpSpaceHashQuery(cpSpaceHash *hash, void *obj, cpBB bb, cpSpatialIndexQueryFunc 
 // Similar to struct eachPair above.
 typedef struct queryRehashContext {
 	cpSpaceHash *hash;
-	cpSpatialIndexQueryFunc func;
-	void *data;
+    cpSpace     *data;
 } queryRehashContext;
+
 
 // Hashset iterator func used with cpSpaceHashQueryRehash().
 static void
 queryRehash_helper(cpHandle *hand, queryRehashContext *context)
 {
 	cpSpaceHash *hash = context->hash;
-	cpSpatialIndexQueryFunc func = context->func;
-	void *data = context->data;
+	cpSpace *data = context->data;
 
 	cpFloat dim = hash->celldim;
 	int n = hash->numcells;
 
-	void *obj = hand->obj;
-	cpBB bb = hash->spatialIndex.bbfunc(obj);
+	cpShape *obj = (cpShape*)hand->obj;
+	cpBB bb = cpShapeGetBB(obj);
 
 	int l = floor_int(bb.l/dim);
 	int r = floor_int(bb.r/dim);
@@ -424,54 +471,99 @@ queryRehash_helper(cpHandle *hand, queryRehashContext *context)
 	
 	cpSpaceHashBin **table = hash->table;
 
-	for(int i=l; i<=r; i++){
-		for(int j=b; j<=t; j++){
-			cpHashValue idx = hash_func(i,j,n);
+    if ((r - l) * (t - b) > n)
+    {
+        /* cpAssertWarn(cpFalse, "Detected suspiciously large object - skipping collision detection"); */
+        /* return; */
+        for (int idx=0; idx<n; idx++)
+        {
 			cpSpaceHashBin *bin = table[idx];
-			
-			if(containsHandle(bin, hand)) continue;
+
+            if (bin && bin->handle == hand)
+                continue;
 			
 			cpHandleRetain(hand); // this MUST be done first in case the object is removed in func()
-			query_helper(hash, &bin, obj, func, data);
+            collideShapes_helper(hash, &bin, obj, data);
 			
 			cpSpaceHashBin *newBin = getEmptyBin(hash);
 			newBin->handle = hand;
 			newBin->next = bin;
 			table[idx] = newBin;
-		}
-	}
+        }
+    }
+    else
+    {
+        for(int i=l; i<=r; i++){
+            for(int j=b; j<=t; j++){
+                cpHashValue idx = hash_func(i,j,n);
+                cpSpaceHashBin *bin = table[idx];
+
+                /* if(containsHandle(bin, hand)) continue; */
+                if (bin && bin->handle == hand)
+                    continue;
+			
+                cpHandleRetain(hand); // this MUST be done first in case the object is removed in func()
+                collideShapes_helper(hash, &bin, obj, data);
+			
+                cpSpaceHashBin *newBin = getEmptyBin(hash);
+                newBin->handle = hand;
+                newBin->next = bin;
+                table[idx] = newBin;
+            }
+        }
+    }
 	
 	// Increment the stamp for each object hashed.
 	hash->stamp++;
 }
 
 static void
-cpSpaceHashReindexQuery(cpSpaceHash *hash, cpSpatialIndexQueryFunc func, void *data)
+cpSpaceHashReindexQuery(cpSpaceHash *hash, cpSpace *data)
 {
 	clearTable(hash);
-	
-	queryRehashContext context = {hash, func, data};
+
+	queryRehashContext context = {hash, data};
+#if !INLINE_HASH_SET_EACH
 	cpHashSetEach(hash->handleSet, (cpHashSetIteratorFunc)queryRehash_helper, &context);
+#else
+    cpHashSet *set = hash->handleSet;
+    
+    unsigned int size = set->size;
+    cpHashSetBin **table = set->table;
+    
+	for(unsigned int i=0; i<size; i++){
+		cpHashSetBin *bin = table[i];
+		while(bin){
+			cpHashSetBin *next = bin->next;
+            queryRehash_helper((cpHandle*)bin->elt, &context);
+			bin = next;
+		}
+	}
+    
+#endif
 	
-	cpSpatialIndexCollideStatic((cpSpatialIndex *)hash, hash->spatialIndex.staticIndex, func, data);
+	cpSpatialIndexCollideStatic((cpSpatialIndex *)hash, hash->spatialIndex.staticIndex,
+                                (cpSpatialIndexQueryFunc)cpSpaceCollideShapes, data);
 }
 
 static inline cpFloat
-segmentQuery_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, void *obj, cpSpatialIndexSegmentQueryFunc func, void *data)
+segmentQuery_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, struct SegmentQueryContext *obj, void *data)
 {
 	cpFloat t = 1.0f;
+    cpTimestamp hash_stamp = hash->stamp;
 	 
 	restart:
 	for(cpSpaceHashBin *bin = *bin_ptr; bin; bin = bin->next){
 		cpHandle *hand = bin->handle;
-		void *other = hand->obj;
 		
 		// Skip over certain conditions
-		if(hand->stamp == hash->stamp){
+		if(hand->stamp == hash_stamp)
 			continue;
-		} else if(other){
-			t = cpfmin(t, func(obj, other, data));
-			hand->stamp = hash->stamp;
+        
+		void *other = hand->obj;
+        if(other){
+			t = cpfmin(t, SegmentQuery(obj, (cpShape*)other, data));
+			hand->stamp = hash_stamp;
 		} else {
 			// The object for this handle has been removed
 			// cleanup this cell and restart the query
@@ -485,7 +577,7 @@ segmentQuery_helper(cpSpaceHash *hash, cpSpaceHashBin **bin_ptr, void *obj, cpSp
 
 // modified from http://playtechs.blogspot.com/2007/03/raytracing-on-grid.html
 static void
-cpSpaceHashSegmentQuery(cpSpaceHash *hash, void *obj, cpVect a, cpVect b, cpFloat t_exit, cpSpatialIndexSegmentQueryFunc func, void *data)
+cpSpaceHashSegmentQuery(cpSpaceHash *hash, struct SegmentQueryContext *obj, cpVect a, cpVect b, cpFloat t_exit, void *data)
 {
 	a = cpvmult(a, 1.0f/hash->celldim);
 	b = cpvmult(b, 1.0f/hash->celldim);
@@ -526,7 +618,7 @@ cpSpaceHashSegmentQuery(cpSpaceHash *hash, void *obj, cpVect a, cpVect b, cpFloa
 
 	while(t < t_exit){
 		cpHashValue idx = hash_func(cell_x, cell_y, n);
-		t_exit = cpfmin(t_exit, segmentQuery_helper(hash, &table[idx], obj, func, data));
+		t_exit = cpfmin(t_exit, segmentQuery_helper(hash, &table[idx], obj, data));
 
 		if (next_v < next_h){
 			cell_y += y_inc;

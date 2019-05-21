@@ -21,7 +21,7 @@
 
 #include "chipmunk_private.h"
 
-static inline cpSpatialIndexClass *Klass();
+static inline cpSpatialIndexClass *Klass(void);
 
 //MARK: Basic Structures
 
@@ -188,7 +188,7 @@ cpSweep1DQuery(cpSweep1D *sweep, void *obj, cpBB bb, cpSpatialIndexQueryFunc fun
 }
 
 static void
-cpSweep1DSegmentQuery(cpSweep1D *sweep, void *obj, cpVect a, cpVect b, cpFloat t_exit, cpSpatialIndexSegmentQueryFunc func, void *data)
+cpSweep1DSegmentQuery(cpSweep1D *sweep, struct SegmentQueryContext *obj, cpVect a, cpVect b, cpFloat t_exit, void *data)
 {
 	cpBB bb = cpBBExpand(cpBBNew(a.x, a.y, a.x, a.y), b);
 	Bounds bounds = BBToBounds(sweep, bb);
@@ -196,7 +196,7 @@ cpSweep1DSegmentQuery(cpSweep1D *sweep, void *obj, cpVect a, cpVect b, cpFloat t
 	TableCell *table = sweep->table;
 	for(int i=0, count=sweep->num; i<count; i++){
 		TableCell cell = table[i];
-		if(BoundsOverlap(bounds, cell.bounds)) func(obj, cell.obj, data);
+		if(BoundsOverlap(bounds, cell.bounds)) SegmentQuery(obj, (cpShape*)cell.obj, data);
 	}
 }
 
@@ -209,7 +209,7 @@ TableSort(TableCell *a, TableCell *b)
 }
 
 static void
-cpSweep1DReindexQuery(cpSweep1D *sweep, cpSpatialIndexQueryFunc func, void *data)
+cpSweep1DReindexQuery(cpSweep1D *sweep, cpSpace *data)
 {
 	TableCell *table = sweep->table;
 	int count = sweep->num;
@@ -223,13 +223,14 @@ cpSweep1DReindexQuery(cpSweep1D *sweep, cpSpatialIndexQueryFunc func, void *data
 		cpFloat max = cell.bounds.max;
 		
 		for(int j=i+1; table[j].bounds.min < max && j<count; j++){
-			func(cell.obj, table[j].obj, 0, data);
+			cpSpaceCollideShapes((cpShape*)cell.obj, (cpShape*)table[j].obj, 0, data);
 		}
 	}
 	
 	// Reindex query is also responsible for colliding against the static index.
 	// Fortunately there is a helper function for that.
-	cpSpatialIndexCollideStatic((cpSpatialIndex *)sweep, sweep->spatialIndex.staticIndex, func, data);
+	cpSpatialIndexCollideStatic((cpSpatialIndex *)sweep, sweep->spatialIndex.staticIndex,
+                                (cpSpatialIndexQueryFunc)cpSpaceCollideShapes, data);
 }
 
 static cpSpatialIndexClass klass = {

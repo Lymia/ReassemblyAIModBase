@@ -83,14 +83,14 @@ struct cpShape {
 	
 	/// Sensor flag.
 	/// Sensor shapes call collision callbacks but don't produce collisions.
-	cpBool sensor;
+	// cpBool sensor;
 	
 	/// Coefficient of restitution. (elasticity)
-	cpFloat e;
+	float e;
 	/// Coefficient of friction.
-	cpFloat u;
+	float u;
 	/// Surface velocity used when solving for friction.
-	cpVect surface_v;
+	// cpVect surface_v;
 
 	/// User definable data pointer.
 	/// Generally this points to your the game object class so you can access it
@@ -99,10 +99,11 @@ struct cpShape {
 	
 	/// Collision type of this shape used when picking collision handlers.
 	cpCollisionType collision_type;
+    // Layer bitmask for this shape. Shapes only collide if the bitwise and of their layers is non-zero.
+	cpLayers layers;
 	/// Group of this shape. Shapes in the same group don't collide.
 	cpGroup group;
-	// Layer bitmask for this shape. Shapes only collide if the bitwise and of their layers is non-zero.
-	cpLayers layers;
+    cpGroup group2;
 	
 	CP_PRIVATE(cpSpace *space);
 	
@@ -163,10 +164,10 @@ CP_DefineShapeStructGetter(cpBody*, body, Body)
 void cpShapeSetBody(cpShape *shape, cpBody *body);
 
 CP_DefineShapeStructGetter(cpBB, bb, BB)
-CP_DefineShapeStructProperty(cpBool, sensor, Sensor, cpTrue)
+// CP_DefineShapeStructProperty(cpBool, sensor, Sensor, cpTrue)
 CP_DefineShapeStructProperty(cpFloat, e, Elasticity, cpFalse)
 CP_DefineShapeStructProperty(cpFloat, u, Friction, cpTrue)
-CP_DefineShapeStructProperty(cpVect, surface_v, SurfaceVelocity, cpTrue)
+// CP_DefineShapeStructProperty(cpVect, surface_v, SurfaceVelocity, cpTrue)
 CP_DefineShapeStructProperty(cpDataPointer, data, UserData, cpFalse)
 CP_DefineShapeStructProperty(cpCollisionType, collision_type, CollisionType, cpTrue)
 CP_DefineShapeStructProperty(cpGroup, group, Group, cpTrue)
@@ -187,7 +188,7 @@ typedef struct cpCircleShape {
 	cpShape shape;
 	
 	cpVect c, tc;
-	cpFloat r;
+	float r;
 } cpCircleShape;
 
 /// Allocate a circle shape.
@@ -200,18 +201,24 @@ cpShape* cpCircleShapeNew(cpBody *body, cpFloat radius, cpVect offset);
 CP_DeclareShapeGetter(cpCircleShape, cpVect, Offset);
 CP_DeclareShapeGetter(cpCircleShape, cpFloat, Radius);
 
+cpShape* cpShapeInit(cpShape *shape, const cpShapeClass *klass, cpBody *body);
+void cpCircleShapeInitKlass(cpShape *shape);
+void cpSegmentShapeInitKlass(cpShape *shape);
+
 /// @}
 /// @defgroup cpSegmentShape cpSegmentShape
 
 /// @private
 typedef struct cpSegmentShape {
 	cpShape shape;
+
+    // cpVect a, b, n;
+	// cpVect ta, tb, tn;
+	cpVect a, b;
+	cpVect ta, tb;
+	float r;
 	
-	cpVect a, b, n;
-	cpVect ta, tb, tn;
-	cpFloat r;
-	
-	cpVect a_tangent, b_tangent;
+	// cpVect a_tangent, b_tangent;
 } cpSegmentShape;
 
 /// Allocate a segment shape.

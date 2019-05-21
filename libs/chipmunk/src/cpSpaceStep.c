@@ -205,12 +205,14 @@ static inline cpBool
 queryReject(cpShape *a, cpShape *b)
 {
 	return (
-		// BBoxes must overlap
-		!cpBBIntersects(a->bb, b->bb)
 		// Don't collide shapes attached to the same body.
-		|| a->body == b->body
+		a->body == b->body
+		// BBoxes must overlap
+		|| !cpBBIntersects(a->bb, b->bb)
 		// Don't collide objects in the same non-zero group
 		|| (a->group && a->group == b->group)
+        // Don't collide in same positive group2 and don't collide positive group2 with negative group2
+        || (a->group2 && (a->group2 == -b->group2 || (a->group2 > 0 && a->group2 == b->group2)))
 		// Don't collide objects that don't share at least on layer.
 		|| !(a->layers & b->layers)
 		// Don't collide infinite mass objects
@@ -227,8 +229,8 @@ cpSpaceCollideShapes(cpShape *a, cpShape *b, cpCollisionID id, cpSpace *space)
 	
 	cpCollisionHandler *handler = cpSpaceLookupHandler(space, a->collision_type, b->collision_type);
 	
-	cpBool sensor = a->sensor || b->sensor;
-	if(sensor && handler == &cpDefaultCollisionHandler) return id;
+	/* cpBool sensor = a->sensor || b->sensor; */
+	/* if(sensor && handler == &cpDefaultCollisionHandler) return id; */
 	
 	// Shape 'a' should have the lower shape type. (required by cpCollideShapes() )
 	// TODO remove me: a < b comparison is for debugging collisions
@@ -260,9 +262,9 @@ cpSpaceCollideShapes(cpShape *a, cpShape *b, cpCollisionID id, cpSpace *space)
 		// Ignore the arbiter if it has been flagged
 		(arb->state != cpArbiterStateIgnore) && 
 		// Call preSolve
-		handler->preSolve(arb, space, handler->data) &&
+		handler->preSolve(arb, space, handler->data) /* &&
 		// Process, but don't add collisions for sensors.
-		!sensor
+		!sensor */
 	){
 		cpArrayPush(space->arbiters, arb);
 	} else {
@@ -302,7 +304,7 @@ cpSpaceArbiterSetFilter(cpArbiter *arb, cpSpace *space)
 	// Arbiter was used last frame, but not this one
 	if(ticks >= 1 && arb->state != cpArbiterStateCached){
 		arb->state = cpArbiterStateCached;
-		cpArbiterCallSeparate(arb, space);
+		/* cpArbiterCallSeparate(arb, space); */
 	}
 	
 	if(ticks >= space->collisionPersistence){
@@ -322,7 +324,9 @@ void
 cpShapeUpdateFunc(cpShape *shape, void *unused)
 {
 	cpBody *body = shape->body;
-	cpShapeUpdate(shape, body->p, body->rot);
+    /* inlined */
+    /* cpShapeUpdate(shape, body->p, body->rot); */
+    shape->bb = shape->klass->cacheData(shape, body->p, body->rot);
 }
 
 void
@@ -336,8 +340,8 @@ cpSpaceStep(cpSpace *space, cpFloat dt)
 	cpFloat prev_dt = space->curr_dt;
 	space->curr_dt = dt;
 		
-	cpArray *bodies = space->bodies;
-	cpArray *constraints = space->constraints;
+	//cpArray *bodies = space->bodies;
+	/* cpArray *constraints = space->constraints; */
 	cpArray *arbiters = space->arbiters;
 	
 	// Reset and empty the arbiter lists.
@@ -354,15 +358,16 @@ cpSpaceStep(cpSpace *space, cpFloat dt)
 
 	cpSpaceLock(space); {
 		// Integrate positions
-		for(int i=0; i<bodies->num; i++){
-			cpBody *body = (cpBody *)bodies->arr[i];
-			body->position_func(body, dt);
-		}
+        updatePositions(space, dt);
+		/* for(int i=0; i<bodies->num; i++){ */
+			/* cpBody *body = (cpBody *)bodies->arr[i]; */
+			/* body->position_func(body, dt); */
+		/* } */
 		
 		// Find colliding pairs.
 		cpSpacePushFreshContactBuffer(space);
 		cpSpatialIndexEach(space->activeShapes, (cpSpatialIndexIteratorFunc)cpShapeUpdateFunc, NULL);
-		cpSpatialIndexReindexQuery(space->activeShapes, (cpSpatialIndexQueryFunc)cpSpaceCollideShapes, space);
+		cpSpatialIndexReindexQuery(space->activeShapes, space);
 	} cpSpaceUnlock(space, cpFalse);
 	
 	// Rebuild the contact graph (and detect sleeping components if sleeping is enabled)
@@ -373,62 +378,65 @@ cpSpaceStep(cpSpace *space, cpFloat dt)
 		cpHashSetFilter(space->cachedArbiters, (cpHashSetFilterFunc)cpSpaceArbiterSetFilter, space);
 
 		// Prestep the arbiters and constraints.
+        const int arbiters_num = arbiters->num;
+
 		cpFloat slop = space->collisionSlop;
 		cpFloat biasCoef = 1.0f - cpfpow(space->collisionBias, dt);
-		for(int i=0; i<arbiters->num; i++){
+		for(int i=0; i<arbiters_num; i++){
 			cpArbiterPreStep((cpArbiter *)arbiters->arr[i], dt, slop, biasCoef);
 		}
 
-		for(int i=0; i<constraints->num; i++){
-			cpConstraint *constraint = (cpConstraint *)constraints->arr[i];
+		/* for(int i=0; i<constraints->num; i++){ */
+		/* 	cpConstraint *constraint = (cpConstraint *)constraints->arr[i]; */
 			
-			cpConstraintPreSolveFunc preSolve = constraint->preSolve;
-			if(preSolve) preSolve(constraint, space);
+		/* 	cpConstraintPreSolveFunc preSolve = constraint->preSolve; */
+		/* 	if(preSolve) preSolve(constraint, space); */
 			
-			constraint->klass->preStep(constraint, dt);
-		}
+		/* 	constraint->klass->preStep(constraint, dt); */
+		/* } */
 	
 		// Integrate velocities.
-		cpFloat damping = cpfpow(space->damping, dt);
-		cpVect gravity = space->gravity;
-		for(int i=0; i<bodies->num; i++){
-			cpBody *body = (cpBody *)bodies->arr[i];
-			body->velocity_func(body, gravity, damping, dt);
-		}
+		/* cpFloat damping = cpfpow(space->damping, dt); */
+		//cpVect gravity = space->gravity;
+        updateVelocities(space, dt);
+		/* for(int i=0; i<bodies->num; i++){ */
+			/* cpBody *body = (cpBody *)bodies->arr[i]; */
+			/* body->velocity_func(body, gravity, damping, dt); */
+		/* } */
 		
 		// Apply cached impulses
 		cpFloat dt_coef = (prev_dt == 0.0f ? 0.0f : dt/prev_dt);
-		for(int i=0; i<arbiters->num; i++){
+		for(int i=0; i<arbiters_num; i++){
 			cpArbiterApplyCachedImpulse((cpArbiter *)arbiters->arr[i], dt_coef);
 		}
-		
-		for(int i=0; i<constraints->num; i++){
-			cpConstraint *constraint = (cpConstraint *)constraints->arr[i];
-			constraint->klass->applyCachedImpulse(constraint, dt_coef);
-		}
+
+		/* for(int i=0; i<constraints->num; i++){ */
+		/* 	cpConstraint *constraint = (cpConstraint *)constraints->arr[i]; */
+		/* 	constraint->klass->applyCachedImpulse(constraint, dt_coef); */
+		/* } */
 		
 		// Run the impulse solver.
 		for(int i=0; i<space->iterations; i++){
-			for(int j=0; j<arbiters->num; j++){
+			for(int j=0; j<arbiters_num; j++){
 				cpArbiterApplyImpulse((cpArbiter *)arbiters->arr[j]);
 			}
 				
-			for(int j=0; j<constraints->num; j++){
-				cpConstraint *constraint = (cpConstraint *)constraints->arr[j];
-				constraint->klass->applyImpulse(constraint, dt);
-			}
+			/* for(int j=0; j<constraints->num; j++){ */
+			/* 	cpConstraint *constraint = (cpConstraint *)constraints->arr[j]; */
+			/* 	constraint->klass->applyImpulse(constraint, dt); */
+			/* } */
 		}
 		
 		// Run the constraint post-solve callbacks
-		for(int i=0; i<constraints->num; i++){
-			cpConstraint *constraint = (cpConstraint *)constraints->arr[i];
+		/* for(int i=0; i<constraints->num; i++){ */
+		/* 	cpConstraint *constraint = (cpConstraint *)constraints->arr[i]; */
 			
-			cpConstraintPostSolveFunc postSolve = constraint->postSolve;
-			if(postSolve) postSolve(constraint, space);
-		}
+		/* 	cpConstraintPostSolveFunc postSolve = constraint->postSolve; */
+		/* 	if(postSolve) postSolve(constraint, space); */
+		/* } */
 		
 		// run the post-solve callbacks
-		for(int i=0; i<arbiters->num; i++){
+		for(int i=0; i<arbiters_num; i++){
 			cpArbiter *arb = (cpArbiter *) arbiters->arr[i];
 			
 			cpCollisionHandler *handler = arb->handler;

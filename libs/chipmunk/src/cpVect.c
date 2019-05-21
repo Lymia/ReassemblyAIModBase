@@ -47,10 +47,14 @@ cpvslerpconst(const cpVect v1, const cpVect v2, const cpFloat a)
 	return cpvslerp(v1, v2, cpfmin(a, omega)/omega);
 }
 
+#if _MSC_VER
+#define snprintf _snprintf
+#endif
+
 char*
 cpvstr(const cpVect v)
 {
 	static char str[256];
-	sprintf(str, "(% .3f, % .3f)", v.x, v.y);
+	snprintf(str, 256, "(% .3f, % .3f)", v.x, v.y);
 	return str;
 }

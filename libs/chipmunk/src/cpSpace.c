@@ -309,20 +309,20 @@ cpSpaceAddBody(cpSpace *space, cpBody *body)
 cpConstraint *
 cpSpaceAddConstraint(cpSpace *space, cpConstraint *constraint)
 {
-	cpAssertHard(constraint->space != space, "You have already added this constraint to this space. You must not add it a second time.");
-	cpAssertHard(!constraint->space, "You have already added this constraint to another space. You cannot add it to a second.");
-	cpAssertHard(constraint->a && constraint->b, "Constraint is attached to a NULL body.");
-	cpAssertSpaceUnlocked(space);
+	/* cpAssertHard(constraint->space != space, "You have already added this constraint to this space. You must not add it a second time."); */
+	/* cpAssertHard(!constraint->space, "You have already added this constraint to another space. You cannot add it to a second."); */
+	/* cpAssertHard(constraint->a && constraint->b, "Constraint is attached to a NULL body."); */
+	/* cpAssertSpaceUnlocked(space); */
 	
-	cpBodyActivate(constraint->a);
-	cpBodyActivate(constraint->b);
-	cpArrayPush(space->constraints, constraint);
+	/* cpBodyActivate(constraint->a); */
+	/* cpBodyActivate(constraint->b); */
+	/* cpArrayPush(space->constraints, constraint); */
 	
-	// Push onto the heads of the bodies' constraint lists
-	cpBody *a = constraint->a, *b = constraint->b;
-	constraint->next_a = a->constraintList; a->constraintList = constraint;
-	constraint->next_b = b->constraintList; b->constraintList = constraint;
-	constraint->space = space;
+	/* // Push onto the heads of the bodies' constraint lists */
+	/* cpBody *a = constraint->a, *b = constraint->b; */
+	/* constraint->next_a = a->constraintList; a->constraintList = constraint; */
+	/* constraint->next_b = b->constraintList; b->constraintList = constraint; */
+	/* constraint->space = space; */
 	
 	return constraint;
 }
@@ -346,7 +346,7 @@ cachedArbitersFilter(cpArbiter *arb, struct arbiterFilterContext *context)
 		(body == arb->body_b && (shape == arb->b || shape == NULL))
 	){
 		// Call separate when removing shapes.
-		if(shape && arb->state != cpArbiterStateCached) cpArbiterCallSeparate(arb, context->space);
+		/* if(shape && arb->state != cpArbiterStateCached) cpArbiterCallSeparate(arb, context->space); */
 		
 		cpArbiterUnthread(arb);
 		cpArrayDeleteObj(context->space->arbiters, arb);
@@ -599,3 +599,20 @@ cpSpaceUseSpatialHash(cpSpace *space, cpFloat dim, int count)
 	space->staticShapes = staticShapes;
 	space->activeShapes = activeShapes;
 }
+
+void
+cpSpaceUseBBTree(cpSpace *space)
+{
+    cpSpatialIndex *staticShapes = cpBBTreeNew((cpSpatialIndexBBFunc)cpShapeGetBB, NULL);
+	cpSpatialIndex *activeShapes = cpBBTreeNew((cpSpatialIndexBBFunc)cpShapeGetBB, staticShapes);
+
+    cpSpatialIndexEach(space->staticShapes, (cpSpatialIndexIteratorFunc)copyShapes, staticShapes);
+	cpSpatialIndexEach(space->activeShapes, (cpSpatialIndexIteratorFunc)copyShapes, activeShapes);
+
+    cpSpatialIndexFree(space->staticShapes);
+	cpSpatialIndexFree(space->activeShapes);
+	
+	space->staticShapes = staticShapes;
+	space->activeShapes = activeShapes;
+}
+

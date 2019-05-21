@@ -171,21 +171,21 @@ typedef uint32_t cpCollisionID;
 	typedef CP_COLLISION_TYPE_TYPE cpCollisionType;
 #else
 /// Type used for cpSpace.collision_type.
-	typedef uintptr_t cpCollisionType;
+	typedef unsigned short cpCollisionType;
 #endif
 
 #ifdef CP_GROUP_TYPE
 	typedef CP_GROUP_TYPE cpGroup;
 #else
 /// Type used for cpShape.group.
-	typedef uintptr_t cpGroup;
+	typedef int cpGroup;
 #endif
 
 #ifdef CP_LAYERS_TYPE
 	typedef CP_LAYERS_TYPE cpLayers;
 #else
 /// Type used for cpShape.layers.
-	typedef unsigned int cpLayers;
+	typedef unsigned short cpLayers;
 #endif
 
 #ifdef CP_TIMESTAMP_TYPE
@@ -220,3 +220,7 @@ typedef struct cpMat2x2 {
 	// Row major [[a, b][c d]]
 	cpFloat a, b, c, d;
 } cpMat2x2;
+
+#ifndef alloca
+#define alloca _alloca
+#endif

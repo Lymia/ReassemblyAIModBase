@@ -47,8 +47,20 @@ typedef cpBB (*cpSpatialIndexBBFunc)(void *obj);
 typedef void (*cpSpatialIndexIteratorFunc)(void *obj, void *data);
 /// Spatial query callback function type.
 typedef cpCollisionID (*cpSpatialIndexQueryFunc)(void *obj1, void *obj2, cpCollisionID id, void *data);
-/// Spatial segment query callback function type.
-typedef cpFloat (*cpSpatialIndexSegmentQueryFunc)(void *obj1, void *obj2, void *data);
+
+/// Segment query callback function type.
+typedef cpFloat (*cpSpaceSegmentQueryFunc)(cpShape *shape, cpFloat t, cpVect n, void *data);
+
+struct SegmentQueryContext {
+	cpVect start, end;
+	cpLayers layers;
+	cpGroup group;
+    cpGroup group2;
+    cpFloat t;
+	cpSpaceSegmentQueryFunc func;
+};
+
+cpFloat SegmentQuery(struct SegmentQueryContext *context, cpShape *shape, void *data);
 
 
 typedef struct cpSpatialIndexClass cpSpatialIndexClass;
@@ -125,10 +137,10 @@ typedef void (*cpSpatialIndexRemoveImpl)(cpSpatialIndex *index, void *obj, cpHas
 
 typedef void (*cpSpatialIndexReindexImpl)(cpSpatialIndex *index);
 typedef void (*cpSpatialIndexReindexObjectImpl)(cpSpatialIndex *index, void *obj, cpHashValue hashid);
-typedef void (*cpSpatialIndexReindexQueryImpl)(cpSpatialIndex *index, cpSpatialIndexQueryFunc func, void *data);
+typedef void (*cpSpatialIndexReindexQueryImpl)(cpSpatialIndex *index, cpSpace *data);
 
 typedef void (*cpSpatialIndexQueryImpl)(cpSpatialIndex *index, void *obj, cpBB bb, cpSpatialIndexQueryFunc func, void *data);
-typedef void (*cpSpatialIndexSegmentQueryImpl)(cpSpatialIndex *index, void *obj, cpVect a, cpVect b, cpFloat t_exit, cpSpatialIndexSegmentQueryFunc func, void *data);
+typedef void (*cpSpatialIndexSegmentQueryImpl)(cpSpatialIndex *index, struct SegmentQueryContext *obj, cpVect a, cpVect b, cpFloat t_exit, void *data);
 
 struct cpSpatialIndexClass {
 	cpSpatialIndexDestroyImpl destroy;
@@ -211,17 +223,17 @@ static inline void cpSpatialIndexQuery(cpSpatialIndex *index, void *obj, cpBB bb
 }
 
 /// Perform a segment query against the spatial index, calling @c func for each potential match.
-static inline void cpSpatialIndexSegmentQuery(cpSpatialIndex *index, void *obj, cpVect a, cpVect b, cpFloat t_exit, cpSpatialIndexSegmentQueryFunc func, void *data)
+static inline void cpSpatialIndexSegmentQuery(cpSpatialIndex *index, struct SegmentQueryContext *obj, cpVect a, cpVect b, cpFloat t_exit, void *data)
 {
-	index->klass->segmentQuery(index, obj, a, b, t_exit, func, data);
+	index->klass->segmentQuery(index, obj, a, b, t_exit, data);
 }
 
 /// Simultaneously reindex and find all colliding objects.
 /// @c func will be called once for each potentially overlapping pair of objects found.
 /// If the spatial index was initialized with a static index, it will collide it's objects against that as well.
-static inline void cpSpatialIndexReindexQuery(cpSpatialIndex *index, cpSpatialIndexQueryFunc func, void *data)
+static inline void cpSpatialIndexReindexQuery(cpSpatialIndex *index, cpSpace *data)
 {
-	index->klass->reindexQuery(index, func, data);
+	index->klass->reindexQuery(index, data);
 }
 
 ///@}

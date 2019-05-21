@@ -158,12 +158,14 @@ struct Edge {
 	cpVect n;
 };
 
+#if 0
 static inline struct Edge
 EdgeNew(cpVect va, cpVect vb, cpHashValue ha, cpHashValue hb, cpFloat r)
 {
 	struct Edge edge = {{va, ha}, {vb, hb}, r, cpvnormalize(cpvperp(cpvsub(vb, va)))};
 	return edge;
 }
+#endif
 
 static struct Edge
 SupportEdgeForPoly(const cpPolyShape *poly, const cpVect n)
@@ -188,11 +190,12 @@ SupportEdgeForPoly(const cpPolyShape *poly, const cpVect n)
 static struct Edge
 SupportEdgeForSegment(const cpSegmentShape *seg, const cpVect n)
 {
-	if(cpvdot(seg->tn, n) > 0.0){
-		struct Edge edge = {{seg->ta, CP_HASH_PAIR(seg, 0)}, {seg->tb, CP_HASH_PAIR(seg, 1)}, seg->r, seg->tn};
+    cpVect tn = cpvperp(cpvnormalize(cpvsub(seg->tb, seg->ta)));
+	if(cpvdot(tn, n) > 0.0){
+		struct Edge edge = {{seg->ta, CP_HASH_PAIR(seg, 0)}, {seg->tb, CP_HASH_PAIR(seg, 1)}, seg->r, tn};
 		return edge;
 	} else {
-		struct Edge edge = {{seg->tb, CP_HASH_PAIR(seg, 1)}, {seg->ta, CP_HASH_PAIR(seg, 0)}, seg->r, cpvneg(seg->tn)};
+		struct Edge edge = {{seg->tb, CP_HASH_PAIR(seg, 1)}, {seg->ta, CP_HASH_PAIR(seg, 0)}, seg->r, cpvneg(tn)};
 		return edge;
 	}
 }
@@ -560,13 +563,13 @@ CircleToSegment(const cpCircleShape *circleShape, const cpSegmentShape *segmentS
 	cpVect closest = cpvadd(seg_a, cpvmult(seg_delta, closest_t));
 	
 	if(CircleToCircleQuery(center, closest, circleShape->r, segmentShape->r, 0, con)){
-		cpVect n = con[0].n;
+		/* cpVect n = con[0].n; */
 		
 		// Reject endcap collisions if tangents are provided.
-		if(
-			(closest_t != 0.0f || cpvdot(n, cpvrotate(segmentShape->a_tangent, segmentShape->shape.body->rot)) >= 0.0) &&
-			(closest_t != 1.0f || cpvdot(n, cpvrotate(segmentShape->b_tangent, segmentShape->shape.body->rot)) >= 0.0)
-		){
+		/* if( */
+		/* 	(closest_t != 0.0f || cpvdot(n, cpvrotate(segmentShape->a_tangent, segmentShape->shape.body->rot)) >= 0.0) && */
+		/* 	(closest_t != 1.0f || cpvdot(n, cpvrotate(segmentShape->b_tangent, segmentShape->shape.body->rot)) >= 0.0)) */
+        {
 			return 1;
 		}
 	}
@@ -592,16 +595,16 @@ SegmentToSegment(const cpSegmentShape *seg1, const cpSegmentShape *seg2, cpColli
 #endif
 	
 	cpVect n = points.n;
-	cpVect rot1 = seg1->shape.body->rot;
-	cpVect rot2 = seg2->shape.body->rot;
+	/* cpVect rot1 = seg1->shape.body->rot; */
+	/* cpVect rot2 = seg2->shape.body->rot; */
 	if(
-		points.d <= (seg1->r + seg2->r) &&
-		(
-			(!cpveql(points.a, seg1->ta) || cpvdot(n, cpvrotate(seg1->a_tangent, rot1)) <= 0.0) &&
-			(!cpveql(points.a, seg1->tb) || cpvdot(n, cpvrotate(seg1->b_tangent, rot1)) <= 0.0) &&
-			(!cpveql(points.b, seg2->ta) || cpvdot(n, cpvrotate(seg2->a_tangent, rot2)) >= 0.0) &&
-			(!cpveql(points.b, seg2->tb) || cpvdot(n, cpvrotate(seg2->b_tangent, rot2)) >= 0.0)
-		)
+		points.d <= (seg1->r + seg2->r) /* && */
+		/* ( */
+		/* 	(!cpveql(points.a, seg1->ta) || cpvdot(n, cpvrotate(seg1->a_tangent, rot1)) <= 0.0) && */
+		/* 	(!cpveql(points.a, seg1->tb) || cpvdot(n, cpvrotate(seg1->b_tangent, rot1)) <= 0.0) && */
+		/* 	(!cpveql(points.b, seg2->ta) || cpvdot(n, cpvrotate(seg2->a_tangent, rot2)) >= 0.0) && */
+		/* 	(!cpveql(points.b, seg2->tb) || cpvdot(n, cpvrotate(seg2->b_tangent, rot2)) >= 0.0) */
+		/* ) */
 	){
 		return ContactPoints(SupportEdgeForSegment(seg1, n), SupportEdgeForSegment(seg2, cpvneg(n)), points, arr);
 	} else {
@@ -652,13 +655,13 @@ SegmentToPoly(const cpSegmentShape *seg, const cpPolyShape *poly, cpCollisionID 
 	
 	// Reject endcap collisions if tangents are provided.
 	cpVect n = points.n;
-	cpVect rot = seg->shape.body->rot;
+	/* cpVect rot = seg->shape.body->rot; */
 	if(
-		points.d - seg->r - poly->r <= 0.0 &&
-		(
-			(!cpveql(points.a, seg->ta) || cpvdot(n, cpvrotate(seg->a_tangent, rot)) <= 0.0) &&
-			(!cpveql(points.a, seg->tb) || cpvdot(n, cpvrotate(seg->b_tangent, rot)) <= 0.0)
-		)
+		points.d - seg->r - poly->r <= 0.0 /* && */
+		/* ( */
+		/* 	(!cpveql(points.a, seg->ta) || cpvdot(n, cpvrotate(seg->a_tangent, rot)) <= 0.0) && */
+		/* 	(!cpveql(points.a, seg->tb) || cpvdot(n, cpvrotate(seg->b_tangent, rot)) <= 0.0) */
+		/* ) */
 	){
 		return ContactPoints(SupportEdgeForSegment(seg, n), SupportEdgeForPoly(poly, cpvneg(n)), points, arr);
 	} else {

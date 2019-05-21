@@ -46,14 +46,15 @@ cpShapeInit(cpShape *shape, const cpShapeClass *klass, cpBody *body)
 	cpShapeIDCounter++;
 	
 	shape->body = body;
-	shape->sensor = 0;
+	/* shape->sensor = 0; */
 	
 	shape->e = 0.0f;
 	shape->u = 0.0f;
-	shape->surface_v = cpvzero;
+	/* shape->surface_v = cpvzero; */
 	
 	shape->collision_type = 0;
 	shape->group = CP_NO_GROUP;
+    shape->group2 = CP_NO_GROUP;
 	shape->layers = CP_ALL_LAYERS;
 	
 	shape->data = NULL;
@@ -72,12 +73,82 @@ cpShapeDestroy(cpShape *shape)
 	if(shape->klass && shape->klass->destroy) shape->klass->destroy(shape);
 }
 
+
+#define USE_SHAPE_POOL 0
+
+#if USE_SHAPE_POOL
+
+typedef union cpShapeUnion {
+    cpShapeUnion *next;
+    cpCircleShape circle;
+    cpPolyShape poly;
+    cpSegmentShape segment;
+} cpShapeUnion;
+
+static int s_shape_count = 0;
+static cpShapeUnion *s_shapePool;
+
+void cpShapePoolFree(cpShape *ptr)
+{
+    /* FIXME: not thread safe */
+    cpShapeUnion *bin = (cpShapeUnion*)ptr;
+    bin->next = s_shapePool;
+    s_shapePool = bin;
+}
+
+#define INFO_SIZE(T) cpInfo("sizeof(" #T ") = %d", sizeof(T))
+
+void *cpShapePoolAlloc(int size)
+{
+    /* FIXME: not thread safe */
+    cpShapeUnion *bin = s_shapePool;
+    if (bin) {
+        s_shapePool = bin->next;
+        return bin;
+    } else {
+        int count = CP_BUFFER_BYTES/sizeof(cpShapeUnion);
+		cpAssertHard(count, "Internal Error: Buffer size is too small.");
+        if (s_shape_count == 0)
+        {
+            INFO_SIZE(cpShape);
+            INFO_SIZE(cpCircleShape);
+            INFO_SIZE(cpPolyShape);
+            INFO_SIZE(cpSegmentShape);
+        }
+        s_shape_count += count;
+        cpInfo("allocated %d shapes at %d bytes (now %d total)",
+               count, (int)sizeof(cpShapeUnion), s_shape_count);
+		
+		cpShapeUnion *buffer = (cpShapeUnion *)cpcalloc(1, CP_BUFFER_BYTES);
+		/* cpArrayPush(set->allocatedBuffers, buffer); */
+		
+		// push all but the first one, return it instead
+		for(int i=1; i<count; i++) cpShapePoolFree((cpShape*)(buffer + i));
+		return buffer;
+    }
+}
+
+#else
+
+void cpShapePoolFree(cpShape *ptr)
+{
+    cpfree(ptr);
+}
+
+void *cpShapePoolAlloc(int size)
+{
+    return cpcalloc(1, size);
+}
+
+#endif
+
 void
 cpShapeFree(cpShape *shape)
 {
 	if(shape){
 		cpShapeDestroy(shape);
-		cpfree(shape);
+		/* cpfree(shape); */
+        cpShapePoolFree(shape);
 	}
 }
 
@@ -149,7 +220,8 @@ cpShapeSegmentQuery(cpShape *shape, cpVect a, cpVect b, cpSegmentQueryInfo *info
 cpCircleShape *
 cpCircleShapeAlloc(void)
 {
-	return (cpCircleShape *)cpcalloc(1, sizeof(cpCircleShape));
+	/* return (cpCircleShape *)cpcalloc(1, sizeof(cpCircleShape)); */
+    return (cpCircleShape *)cpShapePoolAlloc(sizeof(cpCircleShape));
 }
 
 static cpBB
@@ -199,6 +271,11 @@ cpCircleShapeInit(cpCircleShape *circle, cpBody *body, cpFloat radius, cpVect of
 	return circle;
 }
 
+void cpCircleShapeInitKlass(cpShape *shape)
+{
+    shape->klass = &cpCircleShapeClass;
+}
+
 cpShape *
 cpCircleShapeNew(cpBody *body, cpFloat radius, cpVect offset)
 {
@@ -211,7 +288,8 @@ CP_DefineShapeGetter(cpCircleShape, cpFloat, r, Radius)
 cpSegmentShape *
 cpSegmentShapeAlloc(void)
 {
-	return (cpSegmentShape *)cpcalloc(1, sizeof(cpSegmentShape));
+	/* return (cpSegmentShape *)cpcalloc(1, sizeof(cpSegmentShape)); */
+    return (cpSegmentShape *)cpShapePoolAlloc(sizeof(cpSegmentShape));
 }
 
 static cpBB
@@ -219,7 +297,7 @@ cpSegmentShapeCacheData(cpSegmentShape *seg, cpVect p, cpVect rot)
 {
 	seg->ta = cpvadd(p, cpvrotate(seg->a, rot));
 	seg->tb = cpvadd(p, cpvrotate(seg->b, rot));
-	seg->tn = cpvrotate(seg->n, rot);
+	/* seg->tn = cpvrotate(seg->n, rot); */
 	
 	cpFloat l,r,b,t;
 	
@@ -258,13 +336,14 @@ cpSegmentShapeNearestPointQuery(cpSegmentShape *seg, cpVect p, cpNearestPointQue
 	info->d = d - r;
 	
 	// Use the segment's normal if the distance is very small.
-	info->g = (d > MAGIC_EPSILON ? g : seg->n);
+	info->g = (d > MAGIC_EPSILON ? g : cpvperp(cpvnormalize(cpvsub(seg->b, seg->a)))/* seg->n */);
 }
 
 static void
 cpSegmentShapeSegmentQuery(cpSegmentShape *seg, cpVect a, cpVect b, cpSegmentQueryInfo *info)
 {
-	cpVect n = seg->tn;
+    cpVect n = cpvperp(cpvnormalize(cpvsub(seg->tb, seg->ta)));
+	/* cpVect n = seg->tn; */
 	cpFloat d = cpvdot(cpvsub(seg->ta, a), n);
 	cpFloat r = seg->r;
 	
@@ -313,17 +392,23 @@ cpSegmentShapeInit(cpSegmentShape *seg, cpBody *body, cpVect a, cpVect b, cpFloa
 {
 	seg->a = a;
 	seg->b = b;
-	seg->n = cpvperp(cpvnormalize(cpvsub(b, a)));
+	/* seg->n = cpvperp(cpvnormalize(cpvsub(b, a))); */
 	
 	seg->r = r;
 	
-	seg->a_tangent = cpvzero;
-	seg->b_tangent = cpvzero;
+	/* seg->a_tangent = cpvzero; */
+	/* seg->b_tangent = cpvzero; */
 	
 	cpShapeInit((cpShape *)seg, &cpSegmentShapeClass, body);
 	
 	return seg;
 }
+
+void cpSegmentShapeInitKlass(cpShape *shape)
+{
+    shape->klass = &cpSegmentShapeClass;
+}
+
 
 cpShape*
 cpSegmentShapeNew(cpBody *body, cpVect a, cpVect b, cpFloat r)
@@ -333,17 +418,17 @@ cpSegmentShapeNew(cpBody *body, cpVect a, cpVect b, cpFloat r)
 
 CP_DefineShapeGetter(cpSegmentShape, cpVect, a, A)
 CP_DefineShapeGetter(cpSegmentShape, cpVect, b, B)
-CP_DefineShapeGetter(cpSegmentShape, cpVect, n, Normal)
+/* CP_DefineShapeGetter(cpSegmentShape, cpVect, n, Normal) */
 CP_DefineShapeGetter(cpSegmentShape, cpFloat, r, Radius)
 
 void
 cpSegmentShapeSetNeighbors(cpShape *shape, cpVect prev, cpVect next)
 {
-	cpAssertHard(shape->klass == &cpSegmentShapeClass, "Shape is not a segment shape.");
-	cpSegmentShape *seg = (cpSegmentShape *)shape;
+	/* cpAssertHard(shape->klass == &cpSegmentShapeClass, "Shape is not a segment shape."); */
+	/* cpSegmentShape *seg = (cpSegmentShape *)shape; */
 	
-	seg->a_tangent = cpvsub(prev, seg->a);
-	seg->b_tangent = cpvsub(next, seg->b);
+	/* seg->a_tangent = cpvsub(prev, seg->a); */
+	/* seg->b_tangent = cpvsub(next, seg->b); */
 }
 
 // Unsafe API (chipmunk_unsafe.h)
@@ -374,7 +459,7 @@ cpSegmentShapeSetEndpoints(cpShape *shape, cpVect a, cpVect b)
 	
 	seg->a = a;
 	seg->b = b;
-	seg->n = cpvperp(cpvnormalize(cpvsub(b, a)));
+	/* seg->n = cpvperp(cpvnormalize(cpvsub(b, a))); */
 }
 
 void

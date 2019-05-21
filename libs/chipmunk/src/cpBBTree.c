@@ -24,7 +24,7 @@
 
 #include "chipmunk_private.h"
 
-static inline cpSpatialIndexClass *Klass();
+static inline cpSpatialIndexClass *Klass(void);
 
 typedef struct Node Node;
 typedef struct Pair Pair;
@@ -364,20 +364,20 @@ SubtreeQuery(Node *subtree, void *obj, cpBB bb, cpSpatialIndexQueryFunc func, vo
 
 
 static cpFloat
-SubtreeSegmentQuery(Node *subtree, void *obj, cpVect a, cpVect b, cpFloat t_exit, cpSpatialIndexSegmentQueryFunc func, void *data)
+SubtreeSegmentQuery(Node *subtree, struct SegmentQueryContext *obj, cpVect a, cpVect b, cpFloat t_exit, void *data)
 {
 	if(NodeIsLeaf(subtree)){
-		return func(obj, subtree->obj, data);
+        return SegmentQuery(obj, (cpShape*)subtree->obj, data);
 	} else {
 		cpFloat t_a = cpBBSegmentQuery(subtree->A->bb, a, b);
 		cpFloat t_b = cpBBSegmentQuery(subtree->B->bb, a, b);
 		
 		if(t_a < t_b){
-			if(t_a < t_exit) t_exit = cpfmin(t_exit, SubtreeSegmentQuery(subtree->A, obj, a, b, t_exit, func, data));
-			if(t_b < t_exit) t_exit = cpfmin(t_exit, SubtreeSegmentQuery(subtree->B, obj, a, b, t_exit, func, data));
+			if(t_a < t_exit) t_exit = cpfmin(t_exit, SubtreeSegmentQuery(subtree->A, obj, a, b, t_exit, data));
+			if(t_b < t_exit) t_exit = cpfmin(t_exit, SubtreeSegmentQuery(subtree->B, obj, a, b, t_exit, data));
 		} else {
-			if(t_b < t_exit) t_exit = cpfmin(t_exit, SubtreeSegmentQuery(subtree->B, obj, a, b, t_exit, func, data));
-			if(t_a < t_exit) t_exit = cpfmin(t_exit, SubtreeSegmentQuery(subtree->A, obj, a, b, t_exit, func, data));
+			if(t_b < t_exit) t_exit = cpfmin(t_exit, SubtreeSegmentQuery(subtree->B, obj, a, b, t_exit, data));
+			if(t_a < t_exit) t_exit = cpfmin(t_exit, SubtreeSegmentQuery(subtree->A, obj, a, b, t_exit, data));
 		}
 		
 		return t_exit;
@@ -636,7 +636,7 @@ cpBBTreeContains(cpBBTree *tree, void *obj, cpHashValue hashid)
 static void LeafUpdateWrap(Node *leaf, cpBBTree *tree) {LeafUpdate(leaf, tree);}
 
 static void
-cpBBTreeReindexQuery(cpBBTree *tree, cpSpatialIndexQueryFunc func, void *data)
+ReindexQueryHelper(cpBBTree *tree, cpSpatialIndexQueryFunc func, void *data)
 {
 	if(!tree->root) return;
 	
@@ -654,9 +654,15 @@ cpBBTreeReindexQuery(cpBBTree *tree, cpSpatialIndexQueryFunc func, void *data)
 }
 
 static void
+cpBBTreeReindexQuery(cpBBTree *tree, cpSpace *data)
+{
+    ReindexQueryHelper(tree, (cpSpatialIndexQueryFunc)cpSpaceCollideShapes, data);
+}
+
+static void
 cpBBTreeReindex(cpBBTree *tree)
 {
-	cpBBTreeReindexQuery(tree, VoidQueryFunc, NULL);
+	ReindexQueryHelper(tree, VoidQueryFunc, NULL);
 }
 
 static void
@@ -672,10 +678,10 @@ cpBBTreeReindexObject(cpBBTree *tree, void *obj, cpHashValue hashid)
 //MARK: Query
 
 static void
-cpBBTreeSegmentQuery(cpBBTree *tree, void *obj, cpVect a, cpVect b, cpFloat t_exit, cpSpatialIndexSegmentQueryFunc func, void *data)
+cpBBTreeSegmentQuery(cpBBTree *tree, struct SegmentQueryContext *obj, cpVect a, cpVect b, cpFloat t_exit, void *data)
 {
 	Node *root = tree->root;
-	if(root) SubtreeSegmentQuery(root, obj, a, b, t_exit, func, data);
+	if(root) SubtreeSegmentQuery(root, obj, a, b, t_exit, data);
 }
 
 static void
