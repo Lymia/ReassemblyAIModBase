@@ -191,8 +191,8 @@ CP_DefineBodyStructProperty(cpVect, f, Force)
 CP_DefineBodyStructGetter(cpFloat, a, Angle)
 /// Set the angle of a body.
 void cpBodySetAngle(cpBody *body, cpFloat a);
-CP_DefineBodyStructProperty(cpFloat, w, AngVel)
-CP_DefineBodyStructProperty(cpFloat, t, Torque)
+CP_DefineBodyStructProperty(float, w, AngVel)
+CP_DefineBodyStructProperty(float, t, Torque)
 CP_DefineBodyStructGetter(cpVect, rot, Rot)
 //CP_DefineBodyStructProperty(cpFloat, v_limit, VelLimit)
 //CP_DefineBodyStructProperty(cpFloat, w_limit, AngVelLimit)
