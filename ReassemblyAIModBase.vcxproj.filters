@@ -24,15 +24,6 @@
     <Filter Include="Dependencies\core">
       <UniqueIdentifier>{56cb56c7-5d07-41eb-8c7f-b1dac61449c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Dependencies\core\os">
-      <UniqueIdentifier>{f663e688-f70c-45cc-9894-a4db7c474ce0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Dependencies\core\os\win32">
-      <UniqueIdentifier>{ae31c659-53cd-4b46-b8e3-425f6dbe3bcb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Dependencies\core\os\sdl">
-      <UniqueIdentifier>{2d73b7f7-91fb-48c8-81cc-5af9ed1ea21d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Dependencies\game">
       <UniqueIdentifier>{2dc1e7c4-2109-4683-8e11-f67429dc7a5e}</UniqueIdentifier>
     </Filter>
@@ -68,6 +59,12 @@
     </Filter>
     <Filter Include="Dependencies\zlib">
       <UniqueIdentifier>{7529824f-8772-439d-98a3-ebc183fcc29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\runtime">
+      <UniqueIdentifier>{ad6b71ee-de35-4d98-9fb1-da4214b8e121}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\zydis">
+      <UniqueIdentifier>{1c52309d-1387-4bbb-b3c2-0082f2f086c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -194,11 +191,47 @@
     <ClCompile Include="src\internal\Utils.cpp">
       <Filter>Source Files\internal</Filter>
     </ClCompile>
-    <ClCompile Include="src\Polyfill.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\runtime\Polyfill.cpp">
+      <Filter>Source Files\runtime</Filter>
     </ClCompile>
-    <ClCompile Include="src\MinCore.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\runtime\MinCore.cpp">
+      <Filter>Source Files\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\Decoder.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\DecoderData.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\Formatter.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\MetaInfo.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\Mnemonic.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\Register.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\SharedData.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\String.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\Utils.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\zydis\src\Zydis.c">
+      <Filter>Dependencies\zydis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\internal\AnalysisCore.cpp">
+      <Filter>Source Files\internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\Globals.cpp">
+      <Filter>Source Files\runtime</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -357,15 +390,6 @@
     </ClInclude>
     <ClInclude Include="libs\chipmunk\include\chipmunk\constraints\util.h">
       <Filter>Dependencies\chipmunk\constraints</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\core\os\win32\platformincludes.h">
-      <Filter>Dependencies\core\os\win32</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\core\os\sdl\sdl_inc.h">
-      <Filter>Dependencies\core\os\sdl</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\core\os\sdl\sdl_os.h">
-      <Filter>Dependencies\core\os\sdl</Filter>
     </ClInclude>
     <ClInclude Include="libs\game\Agent.h">
       <Filter>Dependencies\game</Filter>
@@ -1080,6 +1104,48 @@
     </ClInclude>
     <ClInclude Include="src\platformincludes.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\CommonTypes.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\Decoder.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\DecoderTypes.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\Defines.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\Formatter.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\MetaInfo.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\Mnemonic.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\Register.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\SharedTypes.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\Status.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\String.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\Utils.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\zydis\include\Zydis\Zydis.h">
+      <Filter>Dependencies\zydis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\internal\AnalysisCore.h">
+      <Filter>Source Files\internal</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

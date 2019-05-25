@@ -7,8 +7,6 @@
 
 #include <algorithm>
 
-Globals& globals = aiModInternal::getGlobals();
-
 #pragma region Player
 void Player::setMessage(string msg) {
 	aiModInternal::Player_setMessage(this, msg);
@@ -38,7 +36,7 @@ void Notifier::registerHandler(uint64 types, INotifyHandler* handler) {
 		}
 	}
 	if (types) DPRINT(NOTIFICATION, ("Attempt to register unknown notification types!"));
-	DPRINT(NOTIFICATION, ("Added %d and removed %d notification handlers for handler at 0x%p.", added, removed, handler));
+	DPRINT(NOTIFICATION, ("Added %d and removed %d events for handler at 0x%p.", added, removed, handler));
 }
 Notification::Notification(ENotification t, const char* msg, ...) __printflike(3, 4) : Notification(t) {
 	va_list vl;

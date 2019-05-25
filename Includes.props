@@ -12,5 +12,8 @@
     <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/glm;$(ReassemblyCoreImports)</ReassemblyCoreImports>
     <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/minizip;$(ReassemblyCoreImports)</ReassemblyCoreImports>
     <ReassemblyCoreImports>$(ReassemblyBasePath)/libs/zlib;$(ReassemblyCoreImports)</ReassemblyCoreImports>
+    
+    <!-- Defines -->
+    <ReassemblyDefines>ZYDIS_STATIC_DEFINE;ZYDIS_DISABLE_EVEX;ZYDIS_DISABLE_MVEX;AI_MOD</ReassemblyDefines>
   </PropertyGroup>
 </Project>

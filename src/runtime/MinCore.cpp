@@ -181,6 +181,6 @@ void ReportWin32Err1(const char *msg, DWORD dwLastError, const char* file, int l
 		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
 		lpBuffer, (sizeof(lpBuffer) / sizeof(wchar_t)) - 1, NULL);
 	const std::string buf = str_strip(ws2s(lpBuffer));
-	printf("%s:%d:error: %s failed: %#x %s\n", file, line, msg, dwLastError, buf.c_str());
+	::Report(str_format("%s:%d:error: %s failed: %#x %s\n", file, line, msg, dwLastError, buf.c_str()));
 }
 #pragma endregion

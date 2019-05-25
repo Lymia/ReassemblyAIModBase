@@ -86,17 +86,17 @@ inline double2 d2v(const float2 &v) { return double2(v); }
 #include "Types.h"
 
 // do it like this instead of using templates to avoid including huge header files everywhere
-#define DCCV(TYPE) TYPE CreateCVar_ ## TYPE(const char* name, TYPE* vptr, TYPE value, const char* comment="")
-DCCV(float);
-DCCV(int);
-DCCV(uint);
-DCCV(bool);
-DCCV(float2);
-DCCV(int2);
-#undef DCCV
+//#define DCCV(TYPE) TYPE CreateCVar_ ## TYPE(const char* name, TYPE* vptr, TYPE value, const char* comment="")
+//DCCV(float);
+//DCCV(int);
+//DCCV(uint);
+//DCCV(bool);
+//DCCV(float2);
+//DCCV(int2);
+//#undef DCCV
 
-#define DEFINE_CVAR(TYPE, NAME, VALUE)                           \
-    TYPE NAME = CreateCVar_ ## TYPE (#NAME, &NAME, (VALUE))
+//#define DEFINE_CVAR(TYPE, NAME, VALUE)                           \
+//    TYPE NAME = CreateCVar_ ## TYPE (#NAME, &NAME, (VALUE))
 
 #define DBG_TYPES(F)                            \
     F(SENSORS   , uint64(1)<<0)                         \

@@ -45,7 +45,10 @@
     <ClCompile Include="libs\chipmunk\src\cpSweep1D.c" />
     <ClCompile Include="libs\chipmunk\src\cpVect.c" />
     <ClCompile Include="libs\core\base64.c" />
-    <ClCompile Include="libs\core\base64.cpp" />
+    <ClCompile Include="libs\core\base64.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)base64_cpp.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)base64_cpp.obj</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="libs\core\Geometry.cpp" />
     <ClCompile Include="libs\core\md5.c" />
     <ClCompile Include="libs\core\Nav.cpp" />
@@ -54,10 +57,25 @@
     <ClCompile Include="libs\core\stl_ext.cpp" />
     <ClCompile Include="libs\core\Str.cpp" />
     <ClCompile Include="libs\glm\glm\detail\glm.cpp" />
+    <ClCompile Include="libs\zydis\src\Decoder.c" />
+    <ClCompile Include="libs\zydis\src\DecoderData.c" />
+    <ClCompile Include="libs\zydis\src\Formatter.c" />
+    <ClCompile Include="libs\zydis\src\MetaInfo.c" />
+    <ClCompile Include="libs\zydis\src\Mnemonic.c" />
+    <ClCompile Include="libs\zydis\src\Register.c" />
+    <ClCompile Include="libs\zydis\src\SharedData.c" />
+    <ClCompile Include="libs\zydis\src\String.c" />
+    <ClCompile Include="libs\zydis\src\Utils.c" />
+    <ClCompile Include="libs\zydis\src\Zydis.c" />
     <ClCompile Include="src\internal\Analysis.cpp" />
-    <ClCompile Include="src\internal\Utils.cpp" />
-    <ClCompile Include="src\MinCore.cpp" />
-    <ClCompile Include="src\Polyfill.cpp" />
+    <ClCompile Include="src\internal\AnalysisCore.cpp" />
+    <ClCompile Include="src\internal\Utils.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)Utils_rt.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)Utils_rt.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\runtime\Globals.cpp" />
+    <ClCompile Include="src\runtime\MinCore.cpp" />
+    <ClCompile Include="src\runtime\Polyfill.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\chipmunk\include\chipmunk\chipmunk.h" />
@@ -101,9 +119,6 @@
     <ClInclude Include="libs\core\md5.h" />
     <ClInclude Include="libs\core\Nav.h" />
     <ClInclude Include="libs\core\Orbit.h" />
-    <ClInclude Include="libs\core\os\sdl\sdl_inc.h" />
-    <ClInclude Include="libs\core\os\sdl\sdl_os.h" />
-    <ClInclude Include="libs\core\os\win32\platformincludes.h" />
     <ClInclude Include="libs\core\Outlaws.h" />
     <ClInclude Include="libs\core\Particles.h" />
     <ClInclude Include="libs\core\phpbbhash.h" />
@@ -348,7 +363,21 @@
     <ClInclude Include="libs\zlib\zconf.h" />
     <ClInclude Include="libs\zlib\zlib.h" />
     <ClInclude Include="libs\zlib\zutil.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\CommonTypes.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\Decoder.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\DecoderTypes.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\Defines.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\Formatter.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\MetaInfo.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\Mnemonic.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\Register.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\SharedTypes.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\Status.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\String.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\Utils.h" />
+    <ClInclude Include="libs\zydis\include\Zydis\Zydis.h" />
     <ClInclude Include="src\internal\Analysis.h" />
+    <ClInclude Include="src\internal\AnalysisCore.h" />
     <ClInclude Include="src\internal\Macros.h" />
     <ClInclude Include="src\internal\Utils.h" />
     <ClInclude Include="src\platformincludes.h" />
@@ -403,9 +432,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;PSAPI_VERSION=1;NOMINMAX;_WINDOWS;AI_MOD;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;$(ReassemblyDefines);_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ReassemblyCoreImports)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ReassemblyCoreImports);libs/zydis/include;libs/zydis/src</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>true</MinimalRebuild>
@@ -438,9 +467,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>GLEW_STATIC;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;PSAPI_VERSION=1;NOMINMAX;_WINDOWS;AI_MOD;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;$(ReassemblyDefines);NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ReassemblyCoreImports)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ReassemblyCoreImports);libs/zydis/include;libs/zydis/src</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>true</MinimalRebuild>
